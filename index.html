@@ -81,6 +81,29 @@
 
     <!-- Portada -->
     <header>
+	    <!-- Cuenta Regresiva -->
+    <section id="countdown-section" style="background-color: var(--oscuro); color: white; padding: 40px 20px;">
+        <h3 style="margin-top: 0; letter-spacing: 2px; color: var(--primario);">FALTAN:</h3>
+        <div style="display: flex; justify-content: center; gap: 20px; font-weight: bold;">
+            <div>
+                <span id="dias" style="font-size: 2.5rem; display: block; color: var(--primario);">00</span>
+                <small style="font-size: 0.8rem; text-transform: uppercase;">Días</small>
+            </div>
+            <div>
+                <span id="horas" style="font-size: 2.5rem; display: block; color: var(--primario);">00</span>
+                <small style="font-size: 0.8rem; text-transform: uppercase;">Horas</small>
+            </div>
+            <div>
+                <span id="minutos" style="font-size: 2.5rem; display: block; color: var(--primario);">00</span>
+                <small style="font-size: 0.8rem; text-transform: uppercase;">Minutos</small>
+            </div>
+            <div>
+                <span id="segundos" style="font-size: 2.5rem; display: block; color: var(--primario);">00</span>
+                <small style="font-size: 0.8rem; text-transform: uppercase;">Segundos</small>
+            </div>
+        </div>
+    </section>
+
         <h1>¡Nos Casamos!</h1>
         <p style="font-size: 1.5rem;">Te invitamos a compartir este gran día con nosotros</p>
     </header>
@@ -189,6 +212,33 @@
                 boton.disabled = false;
             });
         });
+		
+		        // Configura la fecha de tu casamiento AQUÍ (Formato: Año-Mes-DíaTHora:Minutos:Segundos)
+        const fechaCasamiento = new Date("2026-11-21T18:00:00").getTime();
+
+        const contador = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaCasamiento - ahora;
+
+            // Cálculos de tiempo para días, horas, minutos y segundos
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            // Muestra el resultado en los elementos correspondientes
+            document.getElementById("dias").innerText = dias < 10 ? "0" + dias : dias;
+            document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
+            document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
+
+            // Si la cuenta regresiva termina, muestra un mensaje
+            if (distancia < 0) {
+                clearInterval(contador);
+                document.getElementById("countdown-section").innerHTML = "<h2 style='color: var(--primario);'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
+            }
+        }, 1000);
+
     </script>
 </body>
 </html>
