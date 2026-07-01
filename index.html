@@ -3,52 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Boda</title>
+    <title>Juan & María - Nuestra Boda</title>
+    <!-- Importación de Google Fonts: Caligrafía para Títulos y Sans-serif elegante para texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primario: #d4af37; /* Color dorado */
+            --dorado: #c5a059; /* Dorado más suave y elegante */
+            --dorado-oscuro: #96743d;
             --oscuro: #2c3e50;
-            --claro: #f9f9f9;
+            --texto-suave: #555;
+            --blanco-roto: #fefdfa;
+            --crema: #fffdf9;
+            --fuente-titulo: 'Dancing Script', cursive; /* Para "¡Nos Casamos!" */
+            --fuente-subtitulo: 'Playfair Display', serif; /* Para nombres y H2 */
+            --fuente-cuerpo: 'Poppins', sans-serif; /* Para legibilidad */
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: var(--fuente-cuerpo);
+            line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: var(--claro);
+            background-color: var(--blanco-roto);
             color: var(--oscuro);
             text-align: center;
         }
+
+        h1, h2, h3, .nombres {
+            font-family: var(--fuente-subtitulo);
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        /* --- PORTADA (HEADER) --- */
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
             color: white;
-            padding: 100px 20px;
+            height: 100vh; /* Pantalla completa */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
         }
-        h1 { font-size: 3rem; margin-bottom: 10px; }
-        section { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
-        .btn {
-            background-color: var(--primario);
+
+        header h1 {
+            font-family: var(--fuente-titulo);
+            font-size: 5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .nombres-portada {
+            font-family: var(--fuente-subtitulo);
+            font-size: 2.5rem;
+            font-style: italic;
+            margin: 10px 0 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.5);
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            padding: 10px 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Flecha indicadora hacia abajo */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
             color: white;
-            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 15px;
-            border: none;
-            cursor: pointer;
         }
-        .btn:hover { opacity: 0.9; }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* --- SECCIONES GENERALES --- */
+        section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.8rem;
+            color: var(--dorado-oscuro);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        /* Adorno debajo de los H2 */
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: var(--dorado);
+            margin: 15px auto 0 auto;
+        }
+
+        p {
+            color: var(--texto-suave);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .icon-decor {
+            font-size: 2rem;
+            color: var(--dorado);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- CUENTA REGRESIVA --- */
+        #countdown-section {
+            background-color: var(--oscuro);
+            color: white;
+            padding: 60px 20px;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-dotted-2.png'); /* Textura sutil */
+        }
+
+        #countdown-section h3 {
+            font-family: var(--fuente-cuerpo);
+            margin-top: 0;
+            letter-spacing: 3px;
+            color: var(--dorado);
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 100px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .time-num {
+            font-family: var(--fuente-subtitulo);
+            font-size: 3.5rem;
+            display: block;
+            color: var(--dorado);
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ccc;
+        }
+
+        /* --- BOTONES --- */
+        .btn {
+            background-color: transparent;
+            color: var(--dorado-oscuro);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 0; /* Bordes rectos para elegancia */
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-top: 20px;
+            border: 2px solid var(--dorado);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dorado);
+            color: white;
+        }
+
+        /* --- UBICACIÓN --- */
+        #ubicacion {
+            background-color: var(--crema);
+        }
+
+        #ubicacion p { margin: 5px 0; }
         
-        /* Contenedor responsivo para el mapa */
         .mapa-contenedor {
             position: relative;
-            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            padding-bottom: 50%; /* Ligeramente más bajo */
             height: 0;
             overflow: hidden;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 40px;
+            border: 8px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
         .mapa-contenedor iframe {
             position: absolute;
@@ -59,61 +228,146 @@
             border: 0;
         }
 
+        /* --- DRESS CODE --- */
+        #dresscode {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                        url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            background-attachment: fixed; /* Efecto Parallax */
+        }
+
+        /* --- REGALOS --- */
+        .datos-bancarios {
+            background: white;
+            padding: 40px;
+            border: 1px solid #eee;
+            max-width: 450px;
+            margin: 30px auto;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            position: relative;
+        }
+        
+        .datos-bancarios::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid #f0e0c0;
+            pointer-events: none;
+        }
+
+        .datos-bancarios p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+        .datos-bancarios strong { color: var(--oscuro); }
+
+        /* --- CONFIRMACIÓN (FORMULARIO) --- */
+        #confirmacion {
+            background-color: var(--crema);
+        }
+
         form {
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 50px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: left;
+            border-top: 4px solid var(--dorado);
         }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        .form-group { margin-bottom: 25px; }
+        label { 
+            display: block; 
+            font-weight: 600; 
+            margin-bottom: 8px; 
+            color: var(--oscuro);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
         input, select, textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 15px;
+            border: 1px solid #e1e1e1;
+            border-radius: 0;
             box-sizing: border-box;
+            font-family: var(--fuente-cuerpo);
+            background-color: #fcfcfc;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--dorado);
+            background-color: white;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 50px 20px;
+            background-color: var(--oscuro);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 3.5rem; }
+            .nombres-portada { font-size: 1.8rem; }
+            section { padding: 60px 20px; }
+            section h2 { font-size: 2.2rem; }
+            .time-num { font-size: 2.5rem; }
+            .countdown-container { gap: 15px; }
+            .countdown-item { padding: 15px; min-width: 70px; }
+            form { padding: 30px; }
+            .mapa-contenedor { padding-bottom: 75%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Portada -->
+    <!-- Portada Fullscreen -->
     <header>
-	    <!-- Cuenta Regresiva -->
-    <section id="countdown-section" style="background-color: var(--oscuro); color: white; padding: 40px 20px;">
-        <h3 style="margin-top: 0; letter-spacing: 2px; color: var(--primario);">FALTAN:</h3>
-        <div style="display: flex; justify-content: center; gap: 20px; font-weight: bold;">
-            <div>
-                <span id="dias" style="font-size: 2.5rem; display: block; color: var(--primario);">00</span>
-                <small style="font-size: 0.8rem; text-transform: uppercase;">Días</small>
+        <p>¡Save the Date!</p>
+        <h1>¡Nos Casamos!</h1>
+        <div class="nombres-portada">Juan & María</div>
+        <p>21 de Noviembre de 2026</p>
+        <a href="#countdown-section" class="scroll-down">▽</a>
+    </header>
+
+    <!-- Cuenta Regresiva -->
+    <section id="countdown-section">
+        <h3>SOLO FALTAN:</h3>
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <span id="dias" class="time-num">00</span>
+                <span class="time-label">Días</span>
             </div>
-            <div>
-                <span id="horas" style="font-size: 2.5rem; display: block; color: var(--primario);">00</span>
-                <small style="font-size: 0.8rem; text-transform: uppercase;">Horas</small>
+            <div class="countdown-item">
+                <span id="horas" class="time-num">00</span>
+                <span class="time-label">Horas</span>
             </div>
-            <div>
-                <span id="minutos" style="font-size: 2.5rem; display: block; color: var(--primario);">00</span>
-                <small style="font-size: 0.8rem; text-transform: uppercase;">Minutos</small>
+            <div class="countdown-item">
+                <span id="minutos" class="time-num">00</span>
+                <span class="time-label">Minutos</span>
             </div>
-            <div>
-                <span id="segundos" style="font-size: 2.5rem; display: block; color: var(--primario);">00</span>
-                <small style="font-size: 0.8rem; text-transform: uppercase;">Segundos</small>
+            <div class="countdown-item">
+                <span id="segundos" class="time-num">00</span>
+                <span class="time-label">Segundos</span>
             </div>
         </div>
     </section>
 
-        <h1>¡Nos Casamos!</h1>
-        <p style="font-size: 1.5rem;">Te invitamos a compartir este gran día con nosotros</p>
-    </header>
-
      <!-- Ubicación con Mapa Directo -->
     <section id="ubicacion">
-        <h2>📍 Ubicación</h2>
+        <span class="icon-decor">📍</span>
+        <h2>La Ceremonia y Fiesta</h2>
+        <p>Te esperamos para celebrar en el</p>
         <p><strong>Salón de Eventos "Mi Sueño"</strong></p>
-        <p>Calle Falsa 123, Buenos Aires, Argentina</p>
-        <p>La ceremonia comenzará puntualmente a las 18:00 hs.</p>
+        <p style="font-style: italic;">Calle Falsa 123, Buenos Aires, Argentina</p>
+        
+        <div style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 25px; display: inline-block;">
+            <span class="icon-decor" style="font-size: 1.5rem;">🕒</span>
+            <p>El evento comenzará puntualmente a las</p>
+            <p style="font-size: 1.5rem; color: var(--oscuro); font-weight: 600;">18:00 hs.</p>
+        </div>
         
         <!-- Mapa en pantalla -->
         <div class="mapa-contenedor">
@@ -122,53 +376,56 @@
     </section>
 
 
-    <!-- Dress Code -->
-    <section id="dresscode" style="background-color: #eee;">
-        <h2>👔 Código de Vestimenta</h2>
-        <p><strong>Elegante Sport</strong></p>
-        <p>Queremos que estés cómodo para bailar toda la noche, pero listos para las fotos.</p>
+    <!-- Dress Code con Fondo Parallax sutil -->
+    <section id="dresscode">
+        <span class="icon-decor">👔</span>
+        <h2>Código de Vestimenta</h2>
+        <p style="font-size: 1.4rem; color: var(--oscuro); font-family: var(--fuente-subtitulo);"><strong>Elegante Sport</strong></p>
+        <p>Queremos que estés cómodo para bailar toda la noche,<br>pero listos para las fotos.</p>
     </section>
 	
 	    <!-- Regalos y Calendario -->
-    <section id="regalos" style="background-color: white;">
-        <h2>🎁 Regalos & Agenda</h2>
-        <p>Tu presencia es nuestro mejor regalo, pero si deseas hacernos un obsequio, puedes colaborar con nuestra luna de miel:</p>
+    <section id="regalos">
+        <span class="icon-decor">🎁</span>
+        <h2>Regalos & Agenda</h2>
+        <p>Tu presencia es nuestro mejor regalo, pero si deseas hacernos un obsequio,<br>puedes colaborar con nuestra luna de miel:</p>
         
-        <div style="background: var(--claro); padding: 20px; border-radius: 8px; max-width: 400px; margin: 20px auto; text-align: left; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="datos-bancarios">
             <p><strong>Banco:</strong> Banco Galicia</p>
             <p><strong>CBU:</strong> 0000003100000000000000</p>
             <p><strong>Alias:</strong> nuestra.boda.2026</p>
-            <p><strong>Titular:</strong> Juan y María</p>
+            <p><strong>Titular:</strong> Juan Pérez y María Gómez</p>
         </div>
 
-        <p style="margin-top: 40px;">¡No te olvides de agendar la fecha para no perderte de nada!</p>
+        <p style="margin-top: 50px; font-style: italic;">¡No te olvides de agendar la fecha para no perderte de nada!</p>
         <!-- Botón para Google Calendar -->
-        <a id="btn-calendario" href="#" target="_blank" class="btn" style="background-color: var(--oscuro);">📅 Agendar en Google Calendar</a>
+        <a id="btn-calendario" href="#" target="_blank" class="btn">📅 Agendar en Google Calendar</a>
     </section>
 
 
     <!-- Confirmación de Asistencia -->
     <section id="confirmacion">
-        <h2>💌 Confirmar Asistencia</h2>
-        <p>Por favor, completa el formulario antes del 1 de Noviembre.</p>
+        <span class="icon-decor">💌</span>
+        <h2>Confirmar Asistencia</h2>
+        <p>Sería un honor contar con tu presencia.<br>Por favor, completa el formulario antes del <strong>1 de Noviembre</strong>.</p>
         
         <form id="rsvpForm">
             <div class="form-group">
-                <label for="nombre">Nombre Completo:</label>
+                <label for="nombre">Nombre Completo</label>
                 <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
             </div>
 
             <div class="form-group">
                 <label for="asistencia">¿Asistirás?</label>
                 <select id="asistencia" required>
-                    <option value="">Selecciona una opción</option>
+                    <option value="" disabled selected>Selecciona una opción</option>
                     <option value="Si">Sí, ¡allí estaré!</option>
                     <option value="No">No podré asistir</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="comida">Requisito Alimentario Especial:</label>
+                <label for="comida">Requisito Alimentario Especial</label>
                 <select id="comida">
                     <option value="Ninguno">Ninguno (Menú estándar)</option>
                     <option value="Vegetariano">Vegetariano</option>
@@ -179,7 +436,7 @@
             </div>
 
             <div class="form-group">
-                <label for="detallesComida">Detalles adicionales de comida (opcional):</label>
+                <label for="detallesComida">Detalles adicionales de comida (opcional)</label>
                 <textarea id="detallesComida" rows="2" placeholder="Alergias o especificaciones..."></textarea>
             </div>
 
@@ -188,15 +445,22 @@
                 <input type="text" id="musica" placeholder="Ej: La Macarena - Los del Río">
             </div>
 
-            <button type="submit" class="btn" style="width: 100%;">Enviar Confirmación</button>
+            <button type="submit" class="btn" style="width: 100%; background-color: var(--dorado); color: white; border: none; cursor: pointer;">Enviar Confirmación</button>
         </form>
     </section>
 
+    <footer>
+        <p>Juan & María © 2026</p>
+        <p>Hecho con ❤️ para nuestra boda.</p>
+    </footer>
+
     <script>
+        // --- LÓGICA DEL FORMULARIO (RSVP) ---
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
             const boton = e.target.querySelector('button');
+            const textoOriginal = boton.innerText;
             boton.innerText = "Enviando...";
             boton.disabled = true;
 
@@ -220,18 +484,19 @@
             .then(() => {
                 alert('¡Gracias! Tu confirmación se ha guardado en nuestra lista.');
                 document.getElementById('rsvpForm').reset();
-                boton.innerText = "Enviar Confirmación";
-                boton.disabled = false;
             })
             .catch(error => {
                 console.error('Error:', error);
                 alert('Hubo un problema al guardar. Inténtalo de nuevo.');
-                boton.innerText = "Enviar Confirmación";
+            })
+            .finally(() => {
+                boton.innerText = textoOriginal;
                 boton.disabled = false;
             });
         });
 		
-		        // Configura la fecha de tu casamiento AQUÍ (Formato: Año-Mes-DíaTHora:Minutos:Segundos)
+		// --- LÓGICA DE LA CUENTA REGRESIVA ---
+        // Configura la fecha de tu casamiento AQUÍ (Formato: Año-Mes-DíaTHora:Minutos:Segundos)
         const fechaCasamiento = new Date("2026-11-21T18:00:00").getTime();
 
         const contador = setInterval(function() {
@@ -245,28 +510,32 @@
             const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
             // Muestra el resultado en los elementos correspondientes
-            document.getElementById("dias").innerText = dias < 10 ? "0" + dias : dias;
-            document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
-            document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
-            document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
+            const spanDias = document.getElementById("dias");
+            if(spanDias){ // Verificación de seguridad
+                spanDias.innerText = dias < 10 ? "0" + dias : dias;
+                document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
+                document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
+                document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
+            }
 
             // Si la cuenta regresiva termina, muestra un mensaje
             if (distancia < 0) {
                 clearInterval(contador);
-                document.getElementById("countdown-section").innerHTML = "<h2 style='color: var(--primario);'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
+                document.getElementById("countdown-section").innerHTML = "<h2 style='color: var(--dorado);'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
             }
         }, 1000);
-        // Configuración del botón de Google Calendar
+
+        // --- LÓGICA BOTÓN GOOGLE CALENDAR ---
         const tituloEvento = encodeURIComponent("¡Casamiento de Juan & María! 🎉");
         const detallesEvento = encodeURIComponent("Los esperamos para compartir este gran día juntos. Por favor, no olvides confirmar asistencia en la web.");
         const ubicacionEvento = encodeURIComponent("Salón de Eventos 'Mi Sueño', Calle Falsa 123, Buenos Aires, Argentina");
         
-        // Formato de fechas para Google (AñoMesDíaTHoraMinutosSegundosZ)
-        // Ejemplo: 21 de Noviembre de 2026 de 18:00 a 03:00 hs del día siguiente (Horario de Argentina UTC-3: 18+3=21hs, 03+3=06hs del día 22)
+        // Formato de fechas para Google (AñoMesDíaTHoraMinutosSegundosZ - UTC)
+        // Nov 21, 2026 18:00 Arg es 21:00 UTC. Fin Nov 22 03:00 Arg es 06:00 UTC.
         const inicioBoda = "20261121T210000Z"; 
         const finBoda = "20261122T060000Z";
 
-        document.getElementById("btn-calendario").href = `https://google.com{tituloEvento}&dates=${inicioBoda}/${finBoda}&details=${detallesEvento}&location=${ubicacionEvento}&sf=true&output=xml`;
+        document.getElementById("btn-calendario").href = `https://www.google.com/calendar/render?action=TEMPLATE&text=${tituloEvento}&dates=${inicioBoda}/${finBoda}&details=${detallesEvento}&location=${ubicacionEvento}&sf=true&output=xml`;
 
     </script>
 </body>
