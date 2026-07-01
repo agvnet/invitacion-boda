@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda</title>
+    <style>
+        :root {
+            --primario: #d4af37; /* Color dorado */
+            --oscuro: #2c3e50;
+            --claro: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--claro);
+            color: var(--oscuro);
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
+        }
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        section { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+        .btn {
+            background-color: var(--primario);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { opacity: 0.9; }
+        
+        /* Contenedor responsivo para el mapa */
+        .mapa-contenedor {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .mapa-contenedor iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Portada -->
+    <header>
+        <h1>¡Nos Casamos!</h1>
+        <p style="font-size: 1.5rem;">Te invitamos a compartir este gran día con nosotros</p>
+    </header>
+
+     <!-- Ubicación con Mapa Directo -->
+    <section id="ubicacion">
+        <h2>📍 Ubicación</h2>
+        <p><strong>Salón de Eventos "Mi Sueño"</strong></p>
+        <p>Calle Falsa 123, Buenos Aires, Argentina</p>
+        <p>La ceremonia comenzará puntualmente a las 18:00 hs.</p>
+        
+        <!-- Mapa en pantalla -->
+        <div class="mapa-contenedor">
+            <!-- AQUÍ PEGAS EL CÓDIGO QUE COPIASTE DE GOOGLE MAPS -->
+            <iframe src="https://www.google.com/maps/place/Casa+sur/@-34.7478451,-58.3957654,17z/data=!4m6!3m5!1s0x95bcd3c52dc7db71:0xf83a6de37dd2be3b!8m2!3d-34.7477416!4d-58.394254!16s%2Fg%2F11kswcjlzf?entry=ttu&g_ep=EgoyMDI2MDYyOC4wIKXMDSoASAFQAw%3D%3D" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+
+    <!-- Dress Code -->
+    <section id="dresscode" style="background-color: #eee;">
+        <h2>👔 Código de Vestimenta</h2>
+        <p><strong>Elegante Sport</strong></p>
+        <p>Queremos que estés cómodo para bailar toda la noche, pero listos para las fotos.</p>
+    </section>
+
+    <!-- Confirmación de Asistencia -->
+    <section id="confirmacion">
+        <h2>💌 Confirmar Asistencia</h2>
+        <p>Por favor, completa el formulario antes del 1 de Noviembre.</p>
+        
+        <form id="rsvpForm">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+            </div>
+
+            <div class="form-group">
+                <label for="asistencia">¿Asistirás?</label>
+                <select id="asistencia" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Si">Sí, ¡allí estaré!</option>
+                    <option value="No">No podré asistir</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comida">Requisito Alimentario Especial:</label>
+                <select id="comida">
+                    <option value="Ninguno">Ninguno (Menú estándar)</option>
+                    <option value="Vegetariano">Vegetariano</option>
+                    <option value="Vegano">Vegano</option>
+                    <option value="Celíaco">Celíaco (Sin TACC)</option>
+                    <option value="Otro">Otro (Especificar abajo)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="detallesComida">Detalles adicionales de comida (opcional):</label>
+                <textarea id="detallesComida" rows="2" placeholder="Alergias o especificaciones..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="musica">¿Qué canción no puede faltar en la pista?</label>
+                <input type="text" id="musica" placeholder="Ej: La Macarena - Los del Río">
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;">Enviar Confirmación</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const boton = e.target.querySelector('button');
+            boton.innerText = "Enviando...";
+            boton.disabled = true;
+
+            const datos = {
+                nombre: document.getElementById('nombre').value,
+                asistencia: document.getElementById('asistencia').value,
+                comida: document.getElementById('comida').value,
+                detallesComida: document.getElementById('detallesComida').value,
+                musica: document.getElementById('musica').value
+            };
+
+            // REEMPLAZA ESTO CON TU ENLACE LARGO DE GOOGLE APPS SCRIPT
+            const urlGoogleScript = "AQUI_PEGA_TU_URL_DE_EXEC"; 
+
+            fetch(urlGoogleScript, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            })
+            .then(() => {
+                alert('¡Gracias! Tu confirmación se ha guardado en nuestra lista.');
+                document.getElementById('rsvpForm').reset();
+                boton.innerText = "Enviar Confirmación";
+                boton.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un problema al guardar. Inténtalo de nuevo.');
+                boton.innerText = "Enviar Confirmación";
+                boton.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
