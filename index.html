@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan & María - Nuestra Boda</title>
-    <!-- Importación de Google Fonts: Caligrafía para Títulos y Sans-serif elegante para texto -->
+    
+    <!-- Google Fonts: Fuentes seleccionadas para alta legibilidad y estilo formal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght=0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --dorado: #c5a059; /* Dorado más suave y elegante */
+            --dorado: #c5a059;
             --dorado-oscuro: #96743d;
             --oscuro: #2c3e50;
             --texto-suave: #555;
-            --blanco-roto: #fefdfa;
-            --crema: #fffdf9;
-            --fuente-titulo: 'Dancing Script', cursive; /* Para "¡Nos Casamos!" */
-            --fuente-subtitulo: 'Playfair Display', serif; /* Para nombres y H2 */
-            --fuente-cuerpo: 'Poppins', sans-serif; /* Para legibilidad */
+            --blanco-roto: #fdfcf9;
+            --crema-claro: #f9f5ed;
+            --fuente-titulo: 'Dancing Script', cursive;
+            --fuente-subtitulo: 'Playfair Display', serif;
+            --fuente-cuerpo: 'Poppins', sans-serif;
         }
 
         html {
@@ -36,90 +37,91 @@
             text-align: center;
         }
 
-        h1, h2, h3, .nombres {
+        h1, h2, h3 {
             font-family: var(--fuente-subtitulo);
             font-weight: 400;
             margin-bottom: 10px;
         }
 
-        /* --- PORTADA (HEADER) --- */
+        /* --- PORTADA (CSS NATIVO, SIN DEPENDENCIAS DE IMÁGENES) --- */
         header {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
-                        /* NUEVA IMAGEN: Imagen más general de la boda */
-                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
-            color: white;
-            height: 100vh; /* Pantalla completa */
+            background: linear-gradient(135deg, #fbf7f0 0%, #f3ede2 100%);
+            color: var(--oscuro);
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 0 20px;
             position: relative;
+            box-sizing: border-box;
         }
 
         header h1 {
             font-family: var(--fuente-titulo);
-            font-size: 5rem;
+            font-size: 5.5rem;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: var(--dorado-oscuro);
         }
 
         .nombres-portada {
             font-family: var(--fuente-subtitulo);
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-style: italic;
-            margin: 10px 0 30px 0;
-            border-top: 1px solid rgba(255,255,255,0.5);
-            border-bottom: 1px solid rgba(255,255,255,0.5);
-            padding: 10px 0;
+            margin: 15px 0 35px 0;
+            border-top: 1px solid rgba(197, 160, 89, 0.4);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 12px 40px;
+            color: var(--oscuro);
         }
 
         header p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            color: var(--texto-suave);
+            margin: 10px 0;
         }
 
-        /* Flecha indicadora hacia abajo */
         .scroll-down {
             position: absolute;
-            bottom: 30px;
-            font-size: 2rem;
+            bottom: 40px;
+            font-size: 1.8rem;
             animation: bounce 2s infinite;
-            color: white;
+            color: var(--dorado);
             text-decoration: none;
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
-            60% {transform: translateY(-5px);}
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
-        /* --- SECCIONES GENERALES --- */
+        /* --- SECCIONES --- */
         section {
-            padding: 100px 20px;
-            max-width: 900px;
+            padding: 90px 20px;
+            max-width: 850px;
             margin: 0 auto;
+            box-sizing: border-box;
         }
 
         section h2 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             color: var(--dorado-oscuro);
             position: relative;
             display: inline-block;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
-        /* Adorno debajo de los H2 */
         section h2::after {
             content: '';
             display: block;
-            width: 80px;
+            width: 70px;
             height: 2px;
             background-color: var(--dorado);
-            margin: 15px auto 0 auto;
+            margin: 12px auto 0 auto;
         }
 
         p {
@@ -129,9 +131,9 @@
         }
 
         .icon-decor {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--dorado);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: block;
         }
 
@@ -140,63 +142,62 @@
             background-color: var(--oscuro);
             color: white;
             padding: 60px 20px;
-            background-image: url('https://www.transparenttextures.com/patterns/dark-dotted-2.png'); /* Textura sutil */
         }
 
         #countdown-section h3 {
             font-family: var(--fuente-cuerpo);
             margin-top: 0;
             letter-spacing: 3px;
-            color: white; /* NUEVO COLOR: Título blanco */
-            font-weight: 300;
-            font-size: 1rem;
+            color: var(--dorado);
+            font-weight: 400;
+            font-size: 0.9rem;
         }
 
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
         .countdown-item {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.04);
             padding: 20px;
-            border-radius: 8px;
-            min-width: 100px;
-            border: 1px solid rgba(255, 255, 255, 0.2); /* NUEVO COLOR: Borde blanco sutil */
+            border-radius: 4px;
+            min-width: 90px;
+            border: 1px solid rgba(197, 160, 89, 0.25);
         }
 
         .time-num {
             font-family: var(--fuente-subtitulo);
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             display: block;
-            color: white; /* NUEVO COLOR: Números blancos */
+            color: white;
             line-height: 1;
+            margin-bottom: 5px;
         }
 
         .time-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #ccc; /* NUEVO COLOR: Texto plateado */
+            color: #b0bec5;
         }
 
         /* --- BOTONES --- */
         .btn {
             background-color: transparent;
             color: var(--dorado-oscuro);
-            padding: 15px 30px;
+            padding: 14px 32px;
             text-decoration: none;
-            border-radius: 0; /* Bordes rectos para elegancia */
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 15px;
             border: 2px solid var(--dorado);
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .btn:hover {
@@ -206,93 +207,80 @@
 
         /* --- UBICACIÓN --- */
         #ubicacion {
-            background-color: var(--crema);
+            background-color: var(--crema-claro);
         }
-
-        #ubicacion p { margin: 5px 0; }
         
         .mapa-contenedor {
             position: relative;
-            padding-bottom: 50%; /* Ligeramente más bajo */
+            padding-bottom: 55%;
             height: 0;
             overflow: hidden;
-            margin-top: 40px;
-            border: 8px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-top: 35px;
+            border: 6px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
         }
         .mapa-contenedor iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             border: 0;
-        }
-
-        /* --- DRESS CODE --- */
-        #dresscode {
-            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
-                        url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
-            background-attachment: fixed; /* Efecto Parallax */
         }
 
         /* --- REGALOS --- */
         .datos-bancarios {
             background: white;
-            padding: 40px;
+            padding: 35px;
             border: 1px solid #eee;
-            max-width: 450px;
+            max-width: 420px;
             margin: 30px auto;
             text-align: left;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             position: relative;
         }
         
         .datos-bancarios::before {
             content: '';
             position: absolute;
-            top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border: 1px solid #f0e0c0;
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
             pointer-events: none;
         }
 
         .datos-bancarios p {
-            margin: 10px 0;
-            font-size: 1rem;
+            margin: 8px 0;
+            font-size: 0.95rem;
         }
-        .datos-bancarios strong { color: var(--oscuro); }
 
-        /* --- CONFIRMACIÓN (FORMULARIO) --- */
+        /* --- CONFIRMACIÓN --- */
         #confirmacion {
-            background-color: var(--crema);
+            background-color: var(--crema-claro);
         }
 
         form {
             background: white;
-            padding: 50px;
+            padding: 45px;
             border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
             text-align: left;
             border-top: 4px solid var(--dorado);
         }
-        .form-group { margin-bottom: 25px; }
+        .form-group { margin-bottom: 22px; }
         label { 
             display: block; 
-            font-weight: 600; 
+            font-weight: 500; 
             margin-bottom: 8px; 
             color: var(--oscuro);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         input, select, textarea {
             width: 100%;
-            padding: 15px;
-            border: 1px solid #e1e1e1;
-            border-radius: 0;
+            padding: 14px;
+            border: 1px solid #e0e0e0;
             box-sizing: border-box;
             font-family: var(--fuente-cuerpo);
-            background-color: #fcfcfc;
+            background-color: #fafafa;
+            font-size: 0.95rem;
         }
         input:focus, select:focus, textarea:focus {
             outline: none;
@@ -302,31 +290,28 @@
 
         /* --- FOOTER --- */
         footer {
-            padding: 50px 20px;
+            padding: 45px 20px;
             background-color: var(--oscuro);
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
         }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            header h1 { font-size: 3.5rem; }
-            .nombres-portada { font-size: 1.8rem; }
+            header h1 { font-size: 3.8rem; }
+            .nombres-portada { font-size: 2rem; padding: 10px 20px; }
             section { padding: 60px 20px; }
-            section h2 { font-size: 2.2rem; }
-            .time-num { font-size: 2.5rem; }
-            .countdown-container { gap: 15px; }
-            .countdown-item { padding: 15px; min-width: 70px; }
-            form { padding: 30px; }
-            .mapa-contenedor { padding-bottom: 75%; }
+            section h2 { font-size: 2rem; }
+            .time-num { font-size: 2.4rem; }
+            .countdown-container { gap: 12px; }
+            .countdown-item { padding: 12px; min-width: 70px; }
+            form { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Portada Fullscreen -->
+    <!-- Cabecera -->
     <header>
-        <!-- CAMBIO DE TEXTO: Castellano -->
         <p>¡Reserva la Fecha!</p>
         <h1>¡Nos Casamos!</h1>
         <div class="nombres-portada">Juan & María</div>
@@ -334,30 +319,18 @@
         <a href="#countdown-section" class="scroll-down">▽</a>
     </header>
 
-    <!-- Cuenta Regresiva -->
+    <!-- Temporizador -->
     <section id="countdown-section">
         <h3>SOLO FALTAN:</h3>
         <div class="countdown-container">
-            <div class="countdown-item">
-                <span id="dias" class="time-num">00</span>
-                <span class="time-label">Días</span>
-            </div>
-            <div class="countdown-item">
-                <span id="horas" class="time-num">00</span>
-                <span class="time-label">Horas</span>
-            </div>
-            <div class="countdown-item">
-                <span id="minutos" class="time-num">00</span>
-                <span class="time-label">Minutos</span>
-            </div>
-            <div class="countdown-item">
-                <span id="segundos" class="time-num">00</span>
-                <span class="time-label">Segundos</span>
-            </div>
+            <div class="countdown-item"><span id="dias" class="time-num">00</span><span class="time-label">Días</span></div>
+            <div class="countdown-item"><span id="horas" class="time-num">00</span><span class="time-label">Horas</span></div>
+            <div class="countdown-item"><span id="minutos" class="time-num">00</span><span class="time-label">Minutos</span></div>
+            <div class="countdown-item"><span id="segundos" class="time-num">00</span><span class="time-label">Segundos</span></div>
         </div>
     </section>
 
-     <!-- Ubicación con Mapa Directo -->
+    <!-- Ubicación -->
     <section id="ubicacion">
         <span class="icon-decor">📍</span>
         <h2>La Ceremonia y Fiesta</h2>
@@ -365,28 +338,26 @@
         <p><strong>Salón de Eventos "Mi Sueño"</strong></p>
         <p style="font-style: italic;">Calle Falsa 123, Buenos Aires, Argentina</p>
         
-        <div style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 25px; display: inline-block;">
-            <span class="icon-decor" style="font-size: 1.5rem;">🕒</span>
+        <div style="margin-top: 20px; border-top: 1px solid #e0dcd3; padding-top: 20px; display: inline-block;">
+            <span class="icon-decor" style="font-size: 1.4rem;">🕒</span>
             <p>El evento comenzará puntualmente a las</p>
-            <p style="font-size: 1.5rem; color: var(--oscuro); font-weight: 600;">18:00 hs.</p>
+            <p style="font-size: 1.4rem; color: var(--oscuro); font-weight: 600;">18:00 hs.</p>
         </div>
         
-        <!-- Mapa en pantalla -->
         <div class="mapa-contenedor">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.307534107257!2d-58.39576540445159!3d-34.74784514282226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3c52dc7db71%3A0xf83a6de37dd2be3b!2sCasa%20sur!5e0!3m2!1ses!2sar!4v1782878587659!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.307534107257!2d-58.39576540445159!3d-34.74784514282226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3c52dc7db71%3A0xf83a6de37dd2be3b!2sCasa%20sur!5e0!3m2!1ses!2sar!4v1782878587659!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </section>
 
-
-    <!-- Dress Code con Fondo Parallax sutil -->
+    <!-- Dress Code -->
     <section id="dresscode">
         <span class="icon-decor">👔</span>
         <h2>Código de Vestimenta</h2>
-        <p style="font-size: 1.4rem; color: var(--oscuro); font-family: var(--fuente-subtitulo);"><strong>Elegante Sport</strong></p>
+        <p style="font-size: 1.3rem; color: var(--oscuro); font-family: var(--fuente-subtitulo);"><strong>Elegante Sport</strong></p>
         <p>Queremos que estés cómodo para bailar toda la noche,<br>pero listos para las fotos.</p>
     </section>
 	
-	    <!-- Regalos y Calendario -->
+    <!-- Regalos -->
     <section id="regalos">
         <span class="icon-decor">🎁</span>
         <h2>Regalos & Agenda</h2>
@@ -399,13 +370,11 @@
             <p><strong>Titular:</strong> Juan Pérez y María Gómez</p>
         </div>
 
-        <p style="margin-top: 50px; font-style: italic;">¡No te olvides de agendar la fecha para no perderte de nada!</p>
-        <!-- Botón para Google Calendar -->
+        <p style="margin-top: 40px; font-style: italic;">¡No te olvides de agendar la fecha para no perderte de nada!</p>
         <a id="btn-calendario" href="#" target="_blank" class="btn">📅 Agendar en Google Calendar</a>
     </section>
 
-
-    <!-- Confirmación de Asistencia -->
+    <!-- RSVP -->
     <section id="confirmacion">
         <span class="icon-decor">💌</span>
         <h2>Confirmar Asistencia</h2>
@@ -438,16 +407,16 @@
             </div>
 
             <div class="form-group">
-                <label for="detallesComida">Detalles adicionales de comida (opcional)</label>
+                <label for="detallesComida">Detalles de comida (opcional)</label>
                 <textarea id="detallesComida" rows="2" placeholder="Alergias o especificaciones..."></textarea>
             </div>
 
             <div class="form-group">
-                <label for="musica">¿Qué canción no puede faltar en la pista?</label>
-                <input type="text" id="musica" placeholder="Ej: La Macarena - Los del Río">
+                <label for="musica">¿Qué canción no puede faltar?</label>
+                <input type="text" id="musica" placeholder="Ej: La Macarena">
             </div>
 
-            <button type="submit" class="btn" style="width: 100%; background-color: var(--dorado); color: white; border: none; cursor: pointer;">Enviar Confirmación</button>
+            <button type="submit" class="btn" style="width: 100%; background-color: var(--dorado); color: white; border: none; cursor: pointer; padding: 16px;">Enviar Confirmación</button>
         </form>
     </section>
 
@@ -457,10 +426,9 @@
     </footer>
 
     <script>
-        // --- LÓGICA DEL FORMULARIO (RSVP) ---
+        // --- ENVÍO RSVP ---
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
-
             const boton = e.target.querySelector('button');
             const textoOriginal = boton.innerText;
             boton.innerText = "Enviando...";
@@ -474,7 +442,6 @@
                 musica: document.getElementById('musica').value
             };
 
-            // REEMPLAZA ESTO CON TU ENLACE LARGO DE GOOGLE APPS SCRIPT
             const urlGoogleScript = "https://script.google.com/macros/s/AKfycbyWEKrFnPkz7Tt8gvufH6UGDOEdB4BKyuqb0lj79preYOiUYXlzxqstvcdcwUiVAhlwiw/exec"; 
 
             fetch(urlGoogleScript, {
@@ -484,12 +451,12 @@
                 body: JSON.stringify(datos)
             })
             .then(() => {
-                alert('¡Gracias! Tu confirmación se ha guardado en nuestra lista.');
+                alert('¡Gracias! Tu confirmación se ha registrado correctamente.');
                 document.getElementById('rsvpForm').reset();
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Hubo un problema al guardar. Inténtalo de nuevo.');
+                alert('Ocurrió un error. Por favor, inténtalo de nuevo.');
             })
             .finally(() => {
                 boton.innerText = textoOriginal;
@@ -497,49 +464,39 @@
             });
         });
 		
-		// --- LÓGICA DE LA CUENTA REGRESIVA ---
-        // Configura la fecha de tu casamiento AQUÍ (Formato: Año-Mes-DíaTHora:Minutos:Segundos)
-        // He ajustado la fecha a la que aparece en la portada para consistencia (21 de Noviembre 2026)
+		// --- CUENTA REGRESIVA ---
         const fechaCasamiento = new Date("2026-11-21T18:00:00").getTime();
 
         const contador = setInterval(function() {
             const ahora = new Date().getTime();
             const distancia = fechaCasamiento - ahora;
 
-            // Cálculos de tiempo para días, horas, minutos y segundos
             const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
             const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-            // Muestra el resultado en los elementos correspondientes
-            const spanDias = document.getElementById("dias");
-            if(spanDias){ // Verificación de seguridad
-                spanDias.innerText = dias < 10 ? "0" + dias : dias;
+            if(document.getElementById("dias")){ 
+                document.getElementById("dias").innerText = dias < 10 ? "0" + dias : dias;
                 document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
-                document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
+                document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutes;
                 document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
             }
 
-            // Si la cuenta regresiva termina, muestra un mensaje
             if (distancia < 0) {
                 clearInterval(contador);
-                document.getElementById("countdown-section").innerHTML = "<h2 style='color: #c5a059;'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
+                document.getElementById("countdown-section").innerHTML = "<h2 style='color: var(--dorado); margin: 0;'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
             }
         }, 1000);
 
-        // --- LÓGICA BOTÓN GOOGLE CALENDAR ---
+        // --- CALENDARIO GOOGLE ---
         const tituloEvento = encodeURIComponent("¡Casamiento de Juan & María! 🎉");
-        const detallesEvento = encodeURIComponent("Los esperamos para compartir este gran día juntos. Por favor, no olvides confirmar asistencia en la web.");
+        const detallesEvento = encodeURIComponent("Los esperamos para celebrar juntos nuestro casamiento. No olvides confirmar en la web.");
         const ubicacionEvento = encodeURIComponent("Salón de Eventos 'Mi Sueño', Calle Falsa 123, Buenos Aires, Argentina");
-        
-        // Formato de fechas para Google (AñoMesDíaTHoraMinutosSegundosZ - UTC)
-        // Nov 21, 2026 18:00 Arg es 21:00 UTC. Fin Nov 22 03:00 Arg es 06:00 UTC.
         const inicioBoda = "20261121T210000Z"; 
         const finBoda = "20261122T060000Z";
 
         document.getElementById("btn-calendario").href = `https://www.google.com/calendar/render?action=TEMPLATE&text=${tituloEvento}&dates=${inicioBoda}/${finBoda}&details=${detallesEvento}&location=${ubicacionEvento}&sf=true&output=xml`;
-
     </script>
 </body>
 </html>
