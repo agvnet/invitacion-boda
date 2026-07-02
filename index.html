@@ -44,10 +44,10 @@
 
         /* --- PORTADA (HEADER) --- */
         header {
-            /* SOLUCIÓN: Incrementamos la opacidad del fondo oscuro (de 0.45/0.65 a 0.55/0.75) para apagar los colores brillantes de las flores */
-            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), 
-                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
-            color: #ffffff;
+            /* SOLUCIÓN: Usamos un degradado sutil y una imagen de fondo mucho más clara (cielo y altar abierto) */
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1519225495810-7512c696505a?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            color: white;
             height: 100vh; /* Pantalla completa */
             display: flex;
             flex-direction: column;
@@ -61,30 +61,26 @@
             font-family: var(--fuente-titulo);
             font-size: 5rem;
             margin: 0;
-            color: #ffffff;
-            text-shadow: 2px 4px 15px rgba(0,0,0,0.8);
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.6);
         }
 
         .nombres-portada {
             font-family: var(--fuente-subtitulo);
             font-size: 2.5rem;
             font-style: italic;
-            color: #ffffff;
             margin: 10px 0 30px 0;
-            border-top: 1px solid rgba(255,255,255,0.7);
-            border-bottom: 1px solid rgba(255,255,255,0.7);
+            border-top: 1px solid rgba(255,255,255,0.6);
+            border-bottom: 1px solid rgba(255,255,255,0.6);
             padding: 10px 0;
-            text-shadow: 2px 3px 10px rgba(0,0,0,0.8);
+            text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
         }
 
         header p {
-            /* SOLUCIÓN: Forzamos el color blanco puro, aumentamos el grosor y agregamos una sombra intensa */
-            color: #ffffff !important; 
-            font-size: 1.3rem;
-            font-weight: 600; /* Más grueso para que resalte */
+            font-size: 1.2rem;
+            font-weight: 400;
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 2px 3px 8px rgba(0,0,0,0.9); /* Sombra marcada contra el fondo de flores */
+            text-shadow: 1px 3px 6px rgba(0,0,0,0.6);
             margin: 15px 0;
         }
 
@@ -519,7 +515,7 @@
             if(spanDias){ 
                 spanDias.innerText = dias < 10 ? "0" + dias : dias;
                 document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
-                document.getElementById("minutos").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
                 document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
             }
 
