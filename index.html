@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan & María - Nuestra Boda</title>
+    <!-- Importación de Google Fonts: Caligrafía para Títulos y Sans-serif elegante para texto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght=700&family=Playfair+Display:ital,wght=0,400;0,700;1,400&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -43,13 +44,10 @@
 
         /* --- PORTADA (HEADER) --- */
         header {
-            /* SOLUCIÓN GARANTIZADA: Imagen fotográfica clara (textura bokeh/brillos elegantes) incrustada en Base64 real */
-            background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
-                        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAAB8LeXmAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAn0lEQVRYw+3YwQ2AMAzE0EwAi8AIS8AInbALpEAn7MIE9SgSpF6u8uXvKyV2HMc6K6X6ZpZ0vGOfgAmsAAnYwALmZgEb2MArwN0CrAsIDIDAAAgMgMAACA6AwAAIDoDAAAgOgMAACA6AwAAIDoDAAAgOgMAACA4AsAAMgMAACA6AwAAIDoDAAAgOgMAACA6AwAAIDgCwAAyAwAAIDoDAAAgOgMAf9AM00wunGZOnEAAAAABJRU5ErkJggg=='),
-                        linear-gradient(135deg, #fbf7f0 0%, #f3ede2 100%);
-            background-size: cover;
-            background-position: center;
-            color: var(--oscuro);
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                        /* NUEVA IMAGEN: Imagen más general de la boda */
+                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            color: white;
             height: 100vh; /* Pantalla completa */
             display: flex;
             flex-direction: column;
@@ -63,8 +61,7 @@
             font-family: var(--fuente-titulo);
             font-size: 5rem;
             margin: 0;
-            color: var(--dorado-oscuro);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .nombres-portada {
@@ -72,19 +69,16 @@
             font-size: 2.5rem;
             font-style: italic;
             margin: 10px 0 30px 0;
-            border-top: 1px solid rgba(197, 160, 89, 0.4);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.4);
+            border-top: 1px solid rgba(255,255,255,0.5);
+            border-bottom: 1px solid rgba(255,255,255,0.5);
             padding: 10px 0;
-            color: var(--oscuro);
         }
 
         header p {
             font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-weight: 300;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            color: var(--texto-suave);
-            margin: 15px 0;
         }
 
         /* Flecha indicadora hacia abajo */
@@ -93,7 +87,7 @@
             bottom: 30px;
             font-size: 2rem;
             animation: bounce 2s infinite;
-            color: var(--dorado);
+            color: white;
             text-decoration: none;
         }
 
@@ -153,7 +147,7 @@
             font-family: var(--fuente-cuerpo);
             margin-top: 0;
             letter-spacing: 3px;
-            color: var(--dorado);
+            color: white; /* NUEVO COLOR: Título blanco */
             font-weight: 300;
             font-size: 1rem;
         }
@@ -170,14 +164,14 @@
             padding: 20px;
             border-radius: 8px;
             min-width: 100px;
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2); /* NUEVO COLOR: Borde blanco sutil */
         }
 
         .time-num {
             font-family: var(--fuente-subtitulo);
             font-size: 3.5rem;
             display: block;
-            color: var(--dorado);
+            color: white; /* NUEVO COLOR: Números blancos */
             line-height: 1;
         }
 
@@ -185,7 +179,7 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #ccc;
+            color: #ccc; /* NUEVO COLOR: Texto plateado */
         }
 
         /* --- BOTONES --- */
@@ -219,7 +213,7 @@
         
         .mapa-contenedor {
             position: relative;
-            padding-bottom: 50%;
+            padding-bottom: 50%; /* Ligeramente más bajo */
             height: 0;
             overflow: hidden;
             margin-top: 40px;
@@ -237,8 +231,9 @@
 
         /* --- DRESS CODE --- */
         #dresscode {
-            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
-                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="2" fill="%23c5a059" opacity="0.2"/></svg>');
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                        url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            background-attachment: fixed; /* Efecto Parallax */
         }
 
         /* --- REGALOS --- */
@@ -329,7 +324,9 @@
 </head>
 <body>
 
+    <!-- Portada Fullscreen -->
     <header>
+        <!-- CAMBIO DE TEXTO: Castellano -->
         <p>¡Reserva la Fecha!</p>
         <h1>¡Nos Casamos!</h1>
         <div class="nombres-portada">Juan & María</div>
@@ -337,6 +334,7 @@
         <a href="#countdown-section" class="scroll-down">▽</a>
     </header>
 
+    <!-- Cuenta Regresiva -->
     <section id="countdown-section">
         <h3>SOLO FALTAN:</h3>
         <div class="countdown-container">
@@ -359,7 +357,8 @@
         </div>
     </section>
 
-     <section id="ubicacion">
+     <!-- Ubicación con Mapa Directo -->
+    <section id="ubicacion">
         <span class="icon-decor">📍</span>
         <h2>La Ceremonia y Fiesta</h2>
         <p>Te esperamos para celebrar en el</p>
@@ -372,12 +371,14 @@
             <p style="font-size: 1.5rem; color: var(--oscuro); font-weight: 600;">18:00 hs.</p>
         </div>
         
+        <!-- Mapa en pantalla -->
         <div class="mapa-contenedor">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.307534107257!2d-58.39576540445159!3d-34.74784514282226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3c52dc7db71%3A0xf83a6de37dd2be3b!2sCasa%20sur!5e0!3m2!1ses!2sar!4v1782878587659!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </section>
 
 
+    <!-- Dress Code con Fondo Parallax sutil -->
     <section id="dresscode">
         <span class="icon-decor">👔</span>
         <h2>Código de Vestimenta</h2>
@@ -385,6 +386,7 @@
         <p>Queremos que estés cómodo para bailar toda la noche,<br>pero listos para las fotos.</p>
     </section>
 	
+	    <!-- Regalos y Calendario -->
     <section id="regalos">
         <span class="icon-decor">🎁</span>
         <h2>Regalos & Agenda</h2>
@@ -398,10 +400,12 @@
         </div>
 
         <p style="margin-top: 50px; font-style: italic;">¡No te olvides de agendar la fecha para no perderte de nada!</p>
+        <!-- Botón para Google Calendar -->
         <a id="btn-calendario" href="#" target="_blank" class="btn">📅 Agendar en Google Calendar</a>
     </section>
 
 
+    <!-- Confirmación de Asistencia -->
     <section id="confirmacion">
         <span class="icon-decor">💌</span>
         <h2>Confirmar Asistencia</h2>
@@ -470,6 +474,7 @@
                 musica: document.getElementById('musica').value
             };
 
+            // REEMPLAZA ESTO CON TU ENLACE LARGO DE GOOGLE APPS SCRIPT
             const urlGoogleScript = "https://script.google.com/macros/s/AKfycbyWEKrFnPkz7Tt8gvufH6UGDOEdB4BKyuqb0lj79preYOiUYXlzxqstvcdcwUiVAhlwiw/exec"; 
 
             fetch(urlGoogleScript, {
@@ -493,4 +498,48 @@
         });
 		
 		// --- LÓGICA DE LA CUENTA REGRESIVA ---
-        const fechaCasamiento
+        // Configura la fecha de tu casamiento AQUÍ (Formato: Año-Mes-DíaTHora:Minutos:Segundos)
+        // He ajustado la fecha a la que aparece en la portada para consistencia (21 de Noviembre 2026)
+        const fechaCasamiento = new Date("2026-11-21T18:00:00").getTime();
+
+        const contador = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaCasamiento - ahora;
+
+            // Cálculos de tiempo para días, horas, minutos y segundos
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            // Muestra el resultado en los elementos correspondientes
+            const spanDias = document.getElementById("dias");
+            if(spanDias){ // Verificación de seguridad
+                spanDias.innerText = dias < 10 ? "0" + dias : dias;
+                document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
+                document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
+                document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
+            }
+
+            // Si la cuenta regresiva termina, muestra un mensaje
+            if (distancia < 0) {
+                clearInterval(contador);
+                document.getElementById("countdown-section").innerHTML = "<h2 style='color: #c5a059;'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
+            }
+        }, 1000);
+
+        // --- LÓGICA BOTÓN GOOGLE CALENDAR ---
+        const tituloEvento = encodeURIComponent("¡Casamiento de Juan & María! 🎉");
+        const detallesEvento = encodeURIComponent("Los esperamos para compartir este gran día juntos. Por favor, no olvides confirmar asistencia en la web.");
+        const ubicacionEvento = encodeURIComponent("Salón de Eventos 'Mi Sueño', Calle Falsa 123, Buenos Aires, Argentina");
+        
+        // Formato de fechas para Google (AñoMesDíaTHoraMinutosSegundosZ - UTC)
+        // Nov 21, 2026 18:00 Arg es 21:00 UTC. Fin Nov 22 03:00 Arg es 06:00 UTC.
+        const inicioBoda = "20261121T210000Z"; 
+        const finBoda = "20261122T060000Z";
+
+        document.getElementById("btn-calendario").href = `https://www.google.com/calendar/render?action=TEMPLATE&text=${tituloEvento}&dates=${inicioBoda}/${finBoda}&details=${detallesEvento}&location=${ubicacionEvento}&sf=true&output=xml`;
+
+    </script>
+</body>
+</html>
