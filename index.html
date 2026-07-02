@@ -45,7 +45,8 @@
         /* --- PORTADA (HEADER) --- */
         header {
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+                        /* NUEVA IMAGEN: Imagen más general de la boda */
+                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
             color: white;
             height: 100vh; /* Pantalla completa */
             display: flex;
@@ -146,7 +147,7 @@
             font-family: var(--fuente-cuerpo);
             margin-top: 0;
             letter-spacing: 3px;
-            color: var(--dorado);
+            color: white; /* NUEVO COLOR: Título blanco */
             font-weight: 300;
             font-size: 1rem;
         }
@@ -163,14 +164,14 @@
             padding: 20px;
             border-radius: 8px;
             min-width: 100px;
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2); /* NUEVO COLOR: Borde blanco sutil */
         }
 
         .time-num {
             font-family: var(--fuente-subtitulo);
             font-size: 3.5rem;
             display: block;
-            color: var(--dorado);
+            color: white; /* NUEVO COLOR: Números blancos */
             line-height: 1;
         }
 
@@ -178,7 +179,7 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #ccc;
+            color: #ccc; /* NUEVO COLOR: Texto plateado */
         }
 
         /* --- BOTONES --- */
@@ -325,7 +326,8 @@
 
     <!-- Portada Fullscreen -->
     <header>
-        <p>¡Save the Date!</p>
+        <!-- CAMBIO DE TEXTO: Castellano -->
+        <p>¡Reserva la Fecha!</p>
         <h1>¡Nos Casamos!</h1>
         <div class="nombres-portada">Juan & María</div>
         <p>21 de Noviembre de 2026</p>
@@ -497,7 +499,8 @@
 		
 		// --- LÓGICA DE LA CUENTA REGRESIVA ---
         // Configura la fecha de tu casamiento AQUÍ (Formato: Año-Mes-DíaTHora:Minutos:Segundos)
-        const fechaCasamiento = new Date("2026-09-12T12:00:00").getTime();
+        // He ajustado la fecha a la que aparece en la portada para consistencia (21 de Noviembre 2026)
+        const fechaCasamiento = new Date("2026-11-21T18:00:00").getTime();
 
         const contador = setInterval(function() {
             const ahora = new Date().getTime();
@@ -521,7 +524,7 @@
             // Si la cuenta regresiva termina, muestra un mensaje
             if (distancia < 0) {
                 clearInterval(contador);
-                document.getElementById("countdown-section").innerHTML = "<h2 style='color: var(--dorado);'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
+                document.getElementById("countdown-section").innerHTML = "<h2 style='color: #c5a059;'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
             }
         }, 1000);
 
