@@ -44,8 +44,8 @@
 
         /* --- PORTADA (HEADER) --- */
         header {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
-                        /* NUEVA IMAGEN: Imagen más general de la boda */
+            /* AJUSTE: Capa de degradado un poco más oscura para mejorar el contraste de los textos */
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), 
                         url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
             color: white;
             height: 100vh; /* Pantalla completa */
@@ -61,7 +61,8 @@
             font-family: var(--fuente-titulo);
             font-size: 5rem;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            /* AJUSTE: Sombra de texto más definida para que resalte sobre el fondo claro */
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.7);
         }
 
         .nombres-portada {
@@ -69,9 +70,11 @@
             font-size: 2.5rem;
             font-style: italic;
             margin: 10px 0 30px 0;
-            border-top: 1px solid rgba(255,255,255,0.5);
-            border-bottom: 1px solid rgba(255,255,255,0.5);
+            border-top: 1px solid rgba(255,255,255,0.6);
+            border-bottom: 1px solid rgba(255,255,255,0.6);
             padding: 10px 0;
+            /* AJUSTE: Sombra para los nombres */
+            text-shadow: 1px 2px 5px rgba(0,0,0,0.6);
         }
 
         header p {
@@ -79,6 +82,8 @@
             font-weight: 300;
             letter-spacing: 1px;
             text-transform: uppercase;
+            /* AJUSTE: Sombra para los textos secundarios de arriba y abajo */
+            text-shadow: 1px 2px 5px rgba(0,0,0,0.6);
         }
 
         /* Flecha indicadora hacia abajo */
@@ -89,6 +94,7 @@
             animation: bounce 2s infinite;
             color: white;
             text-decoration: none;
+            text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
         }
 
         @keyframes bounce {
@@ -147,7 +153,7 @@
             font-family: var(--fuente-cuerpo);
             margin-top: 0;
             letter-spacing: 3px;
-            color: white; /* NUEVO COLOR: Título blanco */
+            color: white;
             font-weight: 300;
             font-size: 1rem;
         }
@@ -164,14 +170,14 @@
             padding: 20px;
             border-radius: 8px;
             min-width: 100px;
-            border: 1px solid rgba(255, 255, 255, 0.2); /* NUEVO COLOR: Borde blanco sutil */
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .time-num {
             font-family: var(--fuente-subtitulo);
             font-size: 3.5rem;
             display: block;
-            color: white; /* NUEVO COLOR: Números blancos */
+            color: white;
             line-height: 1;
         }
 
@@ -179,7 +185,7 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #ccc; /* NUEVO COLOR: Texto plateado */
+            color: #ccc;
         }
 
         /* --- BOTONES --- */
@@ -326,7 +332,6 @@
 
     <!-- Portada Fullscreen -->
     <header>
-        <!-- CAMBIO DE TEXTO: Castellano -->
         <p>¡Reserva la Fecha!</p>
         <h1>¡Nos Casamos!</h1>
         <div class="nombres-portada">Juan & María</div>
@@ -474,7 +479,6 @@
                 musica: document.getElementById('musica').value
             };
 
-            // REEMPLAZA ESTO CON TU ENLACE LARGO DE GOOGLE APPS SCRIPT
             const urlGoogleScript = "https://script.google.com/macros/s/AKfycbyWEKrFnPkz7Tt8gvufH6UGDOEdB4BKyuqb0lj79preYOiUYXlzxqstvcdcwUiVAhlwiw/exec"; 
 
             fetch(urlGoogleScript, {
@@ -498,30 +502,25 @@
         });
 		
 		// --- LÓGICA DE LA CUENTA REGRESIVA ---
-        // Configura la fecha de tu casamiento AQUÍ (Formato: Año-Mes-DíaTHora:Minutos:Segundos)
-        // He ajustado la fecha a la que aparece en la portada para consistencia (21 de Noviembre 2026)
         const fechaCasamiento = new Date("2026-11-21T18:00:00").getTime();
 
         const contador = setInterval(function() {
             const ahora = new Date().getTime();
             const distancia = fechaCasamiento - ahora;
 
-            // Cálculos de tiempo para días, horas, minutos y segundos
             const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
             const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-            // Muestra el resultado en los elementos correspondientes
             const spanDias = document.getElementById("dias");
-            if(spanDias){ // Verificación de seguridad
+            if(spanDias){ 
                 spanDias.innerText = dias < 10 ? "0" + dias : dias;
                 document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
-                document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
+                document.getElementById("minutos").innerText = minutes < 10 ? "0" + minutos : minutos;
                 document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
             }
 
-            // Si la cuenta regresiva termina, muestra un mensaje
             if (distancia < 0) {
                 clearInterval(contador);
                 document.getElementById("countdown-section").innerHTML = "<h2 style='color: #c5a059;'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
@@ -533,8 +532,6 @@
         const detallesEvento = encodeURIComponent("Los esperamos para compartir este gran día juntos. Por favor, no olvides confirmar asistencia en la web.");
         const ubicacionEvento = encodeURIComponent("Salón de Eventos 'Mi Sueño', Calle Falsa 123, Buenos Aires, Argentina");
         
-        // Formato de fechas para Google (AñoMesDíaTHoraMinutosSegundosZ - UTC)
-        // Nov 21, 2026 18:00 Arg es 21:00 UTC. Fin Nov 22 03:00 Arg es 06:00 UTC.
         const inicioBoda = "20261121T210000Z"; 
         const finBoda = "20261122T060000Z";
 
