@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan & María - Nuestra Boda</title>
     
-    <!-- Google Fonts: Fuentes seleccionadas para alta legibilidad y estilo formal -->
+    <!-- Google Fonts: Playfair Display para un toque clásico/editorial y Poppins para la limpieza moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght=0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --dorado: #c5a059;
             --dorado-oscuro: #96743d;
-            --oscuro: #2c3e50;
-            --texto-suave: #555;
-            --blanco-roto: #fdfcf9;
-            --crema-claro: #f9f5ed;
-            --fuente-titulo: 'Dancing Script', cursive;
-            --fuente-subtitulo: 'Playfair Display', serif;
+            --oscuro: #1a252f; /* Un tono más profundo para mayor elegancia */
+            --texto-suave: #5a626a;
+            --blanco-roto: #fdfdfa;
+            --crema-claro: #f8f4eb;
+            --fuente-elegante: 'Playfair Display', serif;
             --fuente-cuerpo: 'Poppins', sans-serif;
         }
 
@@ -35,17 +34,19 @@
             background-color: var(--blanco-roto);
             color: var(--oscuro);
             text-align: center;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3 {
-            font-family: var(--fuente-subtitulo);
+            font-family: var(--fuente-elegante);
             font-weight: 400;
             margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
 
-        /* --- PORTADA (CSS NATIVO, SIN DEPENDENCIAS DE IMÁGENES) --- */
+        /* --- PORTADA ESTILO INVITACIÓN CLÁSICA MODERNA --- */
         header {
-            background: linear-gradient(135deg, #fbf7f0 0%, #f3ede2 100%);
+            background: linear-gradient(180deg, #fbf9f4 0%, #f4eee1 100%);
             color: var(--oscuro);
             height: 100vh;
             display: flex;
@@ -57,120 +58,138 @@
             box-sizing: border-box;
         }
 
-        header h1 {
-            font-family: var(--fuente-titulo);
-            font-size: 5.5rem;
-            margin: 0;
+        header p.sub-pre {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
             color: var(--dorado-oscuro);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-family: var(--fuente-elegante);
+            font-size: 4.8rem;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0;
+            color: var(--oscuro);
+            line-height: 1.1;
         }
 
         .nombres-portada {
-            font-family: var(--fuente-subtitulo);
-            font-size: 2.8rem;
-            font-style: italic;
-            margin: 15px 0 35px 0;
+            font-family: var(--fuente-elegante);
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin: 30px 0;
             border-top: 1px solid rgba(197, 160, 89, 0.4);
             border-bottom: 1px solid rgba(197, 160, 89, 0.4);
-            padding: 12px 40px;
-            color: var(--oscuro);
+            padding: 15px 60px;
+            color: var(--dorado-oscuro);
+            letter-spacing: 1px;
         }
 
-        header p {
+        header p.fecha-top {
             font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 3px;
+            font-weight: 400;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            color: var(--texto-suave);
-            margin: 10px 0;
+            color: var(--oscuro);
+            margin-top: 10px;
         }
 
         .scroll-down {
             position: absolute;
             bottom: 40px;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             animation: bounce 2s infinite;
             color: var(--dorado);
             text-decoration: none;
+            opacity: 0.8;
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
         }
 
         /* --- SECCIONES --- */
         section {
-            padding: 90px 20px;
-            max-width: 850px;
+            padding: 100px 20px;
+            max-width: 800px;
             margin: 0 auto;
             box-sizing: border-box;
         }
 
         section h2 {
-            font-size: 2.6rem;
-            color: var(--dorado-oscuro);
+            font-size: 2.4rem;
+            color: var(--oscuro);
             position: relative;
             display: inline-block;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
 
         section h2::after {
             content: '';
             display: block;
-            width: 70px;
-            height: 2px;
+            width: 50px;
+            height: 1px;
             background-color: var(--dorado);
-            margin: 12px auto 0 auto;
+            margin: 15px auto 0 auto;
         }
 
         p {
             color: var(--texto-suave);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 1.5rem;
+            font-weight: 300;
         }
 
         .icon-decor {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: var(--dorado);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: block;
+            opacity: 0.9;
         }
 
         /* --- CUENTA REGRESIVA --- */
         #countdown-section {
             background-color: var(--oscuro);
             color: white;
-            padding: 60px 20px;
+            padding: 70px 20px;
         }
 
         #countdown-section h3 {
             font-family: var(--fuente-cuerpo);
             margin-top: 0;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             color: var(--dorado);
             font-weight: 400;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
         }
 
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             flex-wrap: wrap;
+            margin-top: 25px;
         }
 
         .countdown-item {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.02);
             padding: 20px;
-            border-radius: 4px;
             min-width: 90px;
-            border: 1px solid rgba(197, 160, 89, 0.25);
+            border: 1px solid rgba(197, 160, 89, 0.2);
         }
 
         .time-num {
-            font-family: var(--fuente-subtitulo);
-            font-size: 3.2rem;
+            font-family: var(--fuente-elegante);
+            font-size: 3rem;
+            font-style: italic;
             display: block;
             color: white;
             line-height: 1;
@@ -181,28 +200,29 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #b0bec5;
+            color: #a4b0be;
         }
 
         /* --- BOTONES --- */
         .btn {
             background-color: transparent;
             color: var(--dorado-oscuro);
-            padding: 14px 32px;
+            padding: 13px 35px;
             text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1.5px;
+            font-weight: 500;
+            letter-spacing: 2px;
             text-transform: uppercase;
             display: inline-block;
             margin-top: 15px;
-            border: 2px solid var(--dorado);
-            transition: all 0.3s ease;
-            font-size: 0.85rem;
+            border: 1px solid var(--dorado);
+            transition: all 0.4s ease;
+            font-size: 0.8rem;
         }
 
         .btn:hover {
-            background-color: var(--dorado);
+            background-color: var(--dorado-oscuro);
             color: white;
+            border-color: var(--dorado-oscuro);
         }
 
         /* --- UBICACIÓN --- */
@@ -212,12 +232,12 @@
         
         .mapa-contenedor {
             position: relative;
-            padding-bottom: 55%;
+            padding-bottom: 50%;
             height: 0;
             overflow: hidden;
-            margin-top: 35px;
-            border: 6px solid white;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            margin-top: 40px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
         }
         .mapa-contenedor iframe {
             position: absolute;
@@ -225,28 +245,37 @@
             border: 0;
         }
 
+        /* --- DRESS CODE --- */
+        #dresscode p strong {
+            font-family: var(--fuente-elegante);
+            font-size: 1.4rem;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--oscuro);
+        }
+
         /* --- REGALOS --- */
         .datos-bancarios {
             background: white;
-            padding: 35px;
-            border: 1px solid #eee;
-            max-width: 420px;
-            margin: 30px auto;
+            padding: 40px;
+            border: 1px solid #e8e8e1;
+            max-width: 400px;
+            margin: 35px auto;
             text-align: left;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
         }
         
         .datos-bancarios::before {
             content: '';
             position: absolute;
-            top: 8px; left: 8px; right: 8px; bottom: 8px;
-            border: 1px solid rgba(197, 160, 89, 0.3);
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid rgba(197, 160, 89, 0.25);
             pointer-events: none;
         }
 
         .datos-bancarios p {
-            margin: 8px 0;
+            margin: 10px 0;
             font-size: 0.95rem;
         }
 
@@ -257,71 +286,72 @@
 
         form {
             background: white;
-            padding: 45px;
-            border-radius: 4px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            padding: 50px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.02);
             text-align: left;
-            border-top: 4px solid var(--dorado);
+            border: 1px solid #e8e8e1;
         }
-        .form-group { margin-bottom: 22px; }
+        .form-group { margin-bottom: 25px; }
         label { 
             display: block; 
             font-weight: 500; 
-            margin-bottom: 8px; 
+            margin-bottom: 10px; 
             color: var(--oscuro);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
         input, select, textarea {
             width: 100%;
             padding: 14px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e2e2e2;
             box-sizing: border-box;
             font-family: var(--fuente-cuerpo);
-            background-color: #fafafa;
+            background-color: #fff;
             font-size: 0.95rem;
+            transition: border-color 0.3s ease;
         }
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--dorado);
-            background-color: white;
         }
 
         /* --- FOOTER --- */
         footer {
-            padding: 45px 20px;
+            padding: 50px 20px;
             background-color: var(--oscuro);
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 3.8rem; }
-            .nombres-portada { font-size: 2rem; padding: 10px 20px; }
-            section { padding: 60px 20px; }
-            section h2 { font-size: 2rem; }
-            .time-num { font-size: 2.4rem; }
-            .countdown-container { gap: 12px; }
-            .countdown-item { padding: 12px; min-width: 70px; }
-            form { padding: 25px; }
+            header h1 { font-size: 3.4rem; }
+            .nombres-portada { font-size: 1.8rem; padding: 12px 30px; margin: 20px 0; }
+            section { padding: 70px 20px; }
+            section h2 { font-size: 1.9rem; }
+            .time-num { font-size: 2.3rem; }
+            .countdown-container { gap: 15px; }
+            .countdown-item { padding: 15px; min-width: 75px; }
+            form { padding: 30px; }
+            .mapa-contenedor { padding-bottom: 70%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabecera -->
+    <!-- Cabecera Estilo Invitación -->
     <header>
-        <p>¡Reserva la Fecha!</p>
-        <h1>¡Nos Casamos!</h1>
+        <p class="sub-pre">Bienvenidos a</p>
+        <h1>Nuestra Boda</h1>
         <div class="nombres-portada">Juan & María</div>
-        <p>21 de Noviembre de 2026</p>
+        <p class="fecha-top">21 . 11 . 2026</p>
         <a href="#countdown-section" class="scroll-down">▽</a>
     </header>
 
     <!-- Temporizador -->
     <section id="countdown-section">
-        <h3>SOLO FALTAN:</h3>
+        <h3>Cada vez falta menos</h3>
         <div class="countdown-container">
             <div class="countdown-item"><span id="dias" class="time-num">00</span><span class="time-label">Días</span></div>
             <div class="countdown-item"><span id="horas" class="time-num">00</span><span class="time-label">Horas</span></div>
@@ -332,16 +362,15 @@
 
     <!-- Ubicación -->
     <section id="ubicacion">
-        <span class="icon-decor">📍</span>
+        <span class="icon-decor">✨</span>
         <h2>La Ceremonia y Fiesta</h2>
         <p>Te esperamos para celebrar en el</p>
         <p><strong>Salón de Eventos "Mi Sueño"</strong></p>
-        <p style="font-style: italic;">Calle Falsa 123, Buenos Aires, Argentina</p>
+        <p style="font-style: italic; color: var(--dorado-oscuro);">Calle Falsa 123, Buenos Aires, Argentina</p>
         
-        <div style="margin-top: 20px; border-top: 1px solid #e0dcd3; padding-top: 20px; display: inline-block;">
-            <span class="icon-decor" style="font-size: 1.4rem;">🕒</span>
+        <div style="margin-top: 25px; border-top: 1px solid #e5dfd3; padding-top: 25px; display: inline-block;">
             <p>El evento comenzará puntualmente a las</p>
-            <p style="font-size: 1.4rem; color: var(--oscuro); font-weight: 600;">18:00 hs.</p>
+            <p style="font-family: var(--fuente-elegante); font-size: 1.8rem; font-style: italic; color: var(--oscuro); margin: 0;">18:00 hs.</p>
         </div>
         
         <div class="mapa-contenedor">
@@ -353,15 +382,16 @@
     <section id="dresscode">
         <span class="icon-decor">👔</span>
         <h2>Código de Vestimenta</h2>
-        <p style="font-size: 1.3rem; color: var(--oscuro); font-family: var(--fuente-subtitulo);"><strong>Elegante Sport</strong></p>
-        <p>Queremos que estés cómodo para bailar toda la noche,<br>pero listos para las fotos.</p>
+        <p>Queremos que disfrutes al máximo, por eso la etiqueta propuesta es:</p>
+        <p><strong>Elegante Sport</strong></p>
+        <p>Listos para las fotos, pero cómodos para darlo todo en la pista de baile.</p>
     </section>
 	
     <!-- Regalos -->
     <section id="regalos">
         <span class="icon-decor">🎁</span>
         <h2>Regalos & Agenda</h2>
-        <p>Tu presencia es nuestro mejor regalo, pero si deseas hacernos un obsequio,<br>puedes colaborar con nuestra luna de miel:</p>
+        <p>Tu presencia es nuestro mejor obsequio. Si de todas formas deseas hacernos un regalo,<br>puedes colaborar con nuestra luna de miel a través de la siguiente cuenta:</p>
         
         <div class="datos-bancarios">
             <p><strong>Banco:</strong> Banco Galicia</p>
@@ -370,7 +400,7 @@
             <p><strong>Titular:</strong> Juan Pérez y María Gómez</p>
         </div>
 
-        <p style="margin-top: 40px; font-style: italic;">¡No te olvides de agendar la fecha para no perderte de nada!</p>
+        <p style="margin-top: 45px; font-style: italic;">¡Guarda la fecha en tu calendario para acompañarnos!</p>
         <a id="btn-calendario" href="#" target="_blank" class="btn">📅 Agendar en Google Calendar</a>
     </section>
 
@@ -378,7 +408,7 @@
     <section id="confirmacion">
         <span class="icon-decor">💌</span>
         <h2>Confirmar Asistencia</h2>
-        <p>Sería un honor contar con tu presencia.<br>Por favor, completa el formulario antes del <strong>1 de Noviembre</strong>.</p>
+        <p>Agradecemos que nos indiques tu presencia completando el siguiente formulario<br>antes del <strong>1 de Noviembre</strong>.</p>
         
         <form id="rsvpForm">
             <div class="form-group">
@@ -412,17 +442,16 @@
             </div>
 
             <div class="form-group">
-                <label for="musica">¿Qué canción no puede faltar?</label>
+                <label for="musica">¿Qué canción sugerís para el DJ?</label>
                 <input type="text" id="musica" placeholder="Ej: La Macarena">
             </div>
 
-            <button type="submit" class="btn" style="width: 100%; background-color: var(--dorado); color: white; border: none; cursor: pointer; padding: 16px;">Enviar Confirmación</button>
+            <button type="submit" class="btn" style="width: 100%; background-color: var(--oscuro); color: white; border: none; cursor: pointer; padding: 16px; font-weight: 600;">Enviar Confirmación</button>
         </form>
     </section>
 
     <footer>
-        <p>Juan & María © 2026</p>
-        <p>Hecho con ❤️ para nuestra boda.</p>
+        <p>Juan & María — 2026</p>
     </footer>
 
     <script>
@@ -431,7 +460,7 @@
             e.preventDefault();
             const boton = e.target.querySelector('button');
             const textoOriginal = boton.innerText;
-            boton.innerText = "Enviando...";
+            boton.innerText = "Registrando...";
             boton.disabled = true;
 
             const datos = {
@@ -451,12 +480,12 @@
                 body: JSON.stringify(datos)
             })
             .then(() => {
-                alert('¡Gracias! Tu confirmación se ha registrado correctamente.');
+                alert('¡Muchas gracias! Tu confirmación se ha registrado correctamente.');
                 document.getElementById('rsvpForm').reset();
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Ocurrió un error. Por favor, inténtalo de nuevo.');
+                alert('Ocurrió un error. Por favor, inténtalo nuevamente.');
             })
             .finally(() => {
                 boton.innerText = textoOriginal;
@@ -485,7 +514,7 @@
 
             if (distancia < 0) {
                 clearInterval(contador);
-                document.getElementById("countdown-section").innerHTML = "<h2 style='color: var(--dorado); margin: 0;'>¡LLEGÓ EL GRAN DÍA! 🍾🎉</h2>";
+                document.getElementById("countdown-section").innerHTML = "<h2 style='color: var(--dorado); margin: 0; font-style: italic;'>¡Llegó el gran día! 🍾🎉</h2>";
             }
         }, 1000);
 
