@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan & María - Nuestra Boda</title>
+    <title>Meli & Gus - Nuestra Boda</title>
     
-    <!-- Google Fonts: Playfair Display para un toque clásico/editorial y Poppins para la limpieza moderna -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
         :root {
             --dorado: #c5a059;
             --dorado-oscuro: #96743d;
-            --oscuro: #1a252f; /* Un tono más profundo para mayor elegancia */
+            --oscuro: #1a252f;
             --texto-suave: #5a626a;
             --blanco-roto: #fdfdfa;
             --crema-claro: #f8f4eb;
@@ -344,8 +344,8 @@
     <header>
         <p class="sub-pre">Bienvenidos a</p>
         <h1>Nuestra Boda</h1>
-        <div class="nombres-portada">Juan & María</div>
-        <p class="fecha-top">21 . 11 . 2026</p>
+        <div class="nombres-portada">Meli & Gus</div>
+        <p class="fecha-top">12 . 09 . 2026</p>
         <a href="#countdown-section" class="scroll-down">▽</a>
     </header>
 
@@ -366,11 +366,11 @@
         <h2>La Ceremonia y Fiesta</h2>
         <p>Te esperamos para celebrar en el</p>
         <p><strong>Salón de Eventos "Mi Sueño"</strong></p>
-        <p style="font-style: italic; color: var(--dorado-oscuro);">Calle Falsa 123, Buenos Aires, Argentina</p>
+        <p style="font-style: italic; color: var(--dorado-oscuro);">Av. Alsina 929, Banfield, Buenos Aires, Argentina</p>
         
         <div style="margin-top: 25px; border-top: 1px solid #e5dfd3; padding-top: 25px; display: inline-block;">
             <p>El evento comenzará puntualmente a las</p>
-            <p style="font-family: var(--fuente-elegante); font-size: 1.8rem; font-style: italic; color: var(--oscuro); margin: 0;">18:00 hs.</p>
+            <p style="font-family: var(--fuente-elegante); font-size: 1.8rem; font-style: italic; color: var(--oscuro); margin: 0;">13:00 hs.</p>
         </div>
         
         <div class="mapa-contenedor">
@@ -408,7 +408,7 @@
     <section id="confirmacion">
         <span class="icon-decor">💌</span>
         <h2>Confirmar Asistencia</h2>
-        <p>Agradecemos que nos indiques tu presencia completando el siguiente formulario<br>antes del <strong>1 de Noviembre</strong>.</p>
+        <p>Agradecemos que nos indiques tu presencia completando el siguiente formulario<br>antes del <strong>1 de Septiembre</strong>.</p>
         
         <form id="rsvpForm">
             <div class="form-group">
@@ -494,7 +494,7 @@
         });
 		
 		// --- CUENTA REGRESIVA ---
-        const fechaCasamiento = new Date("2026-11-21T18:00:00").getTime();
+        const fechaCasamiento = new Date("2026-09-12T13:00:00").getTime();
 
         const contador = setInterval(function() {
             const ahora = new Date().getTime();
@@ -508,7 +508,7 @@
             if(document.getElementById("dias")){ 
                 document.getElementById("dias").innerText = dias < 10 ? "0" + dias : dias;
                 document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
-                document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutes;
+                document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
                 document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
             }
 
