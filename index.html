@@ -44,7 +44,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- PORTADA ESTILO INVITACIÓN CLÁSICA MODERNA --- */
+        /* --- PORTADA ADAPTADA AL ESTILO DEL PDF --- */
         header {
             background: linear-gradient(180deg, #fbf9f4 0%, #f4eee1 100%);
             color: var(--oscuro);
@@ -58,13 +58,22 @@
             box-sizing: border-box;
         }
 
-        header p.sub-pre {
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 4px;
+        .intro-boda {
+            font-family: var(--fuente-cuerpo);
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            color: var(--texto-suave);
+            margin: 0 0 5px 0;
+        }
+
+        .cosa-seria {
+            font-family: var(--fuente-elegante);
+            font-size: 1.6rem;
+            font-style: italic;
             color: var(--dorado-oscuro);
-            margin-bottom: 20px;
+            margin: 0 0 25px 0;
         }
 
         header h1 {
@@ -85,7 +94,7 @@
             border-top: 1px solid rgba(197, 160, 89, 0.4);
             border-bottom: 1px solid rgba(197, 160, 89, 0.4);
             padding: 15px 60px;
-            color: var(--dorado-oscuro);
+            color: var(--oscuro);
             letter-spacing: 1px;
         }
 
@@ -98,9 +107,17 @@
             margin-top: 10px;
         }
 
+        header p.bajada-pdf {
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            color: var(--texto-suave);
+            margin-top: 25px;
+            font-weight: 400;
+        }
+
         .scroll-down {
             position: absolute;
-            bottom: 40px;
+            bottom: 30px;
             font-size: 1.5rem;
             animation: bounce 2s infinite;
             color: var(--dorado);
@@ -340,12 +357,14 @@
 </head>
 <body>
 
-    <!-- Cabecera Estilo Invitación -->
+    <!-- Cabecera Estilo Invitación PDF -->
     <header>
-        <p class="sub-pre">Bienvenidos a</p>
-        <h1>Nuestra Boda</h1>
+        <p class="intro-boda">Después de 16 años,</p>
+        <p class="cosa-seria">La cosa se puso seria...</p>
+        <h1>¡Nos casamos!</h1>
         <div class="nombres-portada">Meli & Gus</div>
         <p class="fecha-top">12 . 09 . 2026</p>
+        <p class="bajada-pdf">¿Cuándo? ¿Dónde?<br>Deslizá hacia abajo para enterarte de todo.</p>
         <a href="#countdown-section" class="scroll-down">▽</a>
     </header>
 
@@ -363,7 +382,7 @@
     <!-- Ubicación -->
     <section id="ubicacion">
         <span class="icon-decor">✨</span>
-        <h2>La Ceremonia y Fiesta</h2>
+        <h2>¿Cuándo y Dónde?</h2>
         <p>Te esperamos para celebrar en el</p>
         <p><strong>Salón de Eventos "Casa Sur"</strong></p>
         <p style="font-style: italic; color: var(--dorado-oscuro);">Av. Alsina 929, Banfield, Buenos Aires, Argentina</p>
@@ -519,11 +538,11 @@
         }, 1000);
 
         // --- CALENDARIO GOOGLE ---
-        const tituloEvento = encodeURIComponent("¡Casamiento de Juan & María! 🎉");
-        const detallesEvento = encodeURIComponent("Los esperamos para celebrar juntos nuestro casamiento. No olvides confirmar en la web.");
-        const ubicacionEvento = encodeURIComponent("Salón de Eventos 'Mi Sueño', Calle Falsa 123, Buenos Aires, Argentina");
-        const inicioBoda = "20261121T210000Z"; 
-        const finBoda = "20261122T060000Z";
+        const tituloEvento = encodeURIComponent("¡Casamiento de Meli & Gus! 🎉");
+        const detallesEvento = encodeURIComponent("Los esperamos para celebrar juntos nuestro casamiento en Casa Sur. No olvides confirmar en la web.");
+        const ubicacionEvento = encodeURIComponent("Casa Sur, Av. Alsina 929, Banfield, Buenos Aires, Argentina");
+        const inicioBoda = "20260912T160000Z"; // Ajustado a UTC (13:00 AR es 16:00 UTC)
+        const finBoda = "20260913T010000Z";
 
         document.getElementById("btn-calendario").href = `https://www.google.com/calendar/render?action=TEMPLATE&text=${tituloEvento}&dates=${inicioBoda}/${finBoda}&details=${detallesEvento}&location=${ubicacionEvento}&sf=true&output=xml`;
     </script>
