@@ -16,8 +16,8 @@
             --azul-oscuro: #2c3e50;
             --texto-suave: #5a6b7c;
             --blanco-fondo: #ffffff;
-            --fondo-papel: #f5f2e9; /* El color crema del papel artesanal */
-            --rayas-celeste: rgba(214, 224, 255, 0.5); /* Celeste periwinkle de la tarjeta */
+            --fondo-papel: #f5f2e9; 
+            --rayas-celeste: rgba(214, 224, 255, 0.5); 
             
             --fuente-script: 'Dancing Script', cursive;
             --fuente-elegante: 'Playfair Display', serif;
@@ -45,9 +45,8 @@
             margin-bottom: 10px;
         }
 
-        /* --- PORTADA CON LAS RAYAS Y EL PAPEL ARTESANAL --- */
+        /* --- PORTADA --- */
         header {
-            /* Patrón de rayas verticales celestes acuarela */
             background: repeating-linear-gradient(
                 90deg,
                 var(--blanco-fondo),
@@ -64,14 +63,11 @@
             box-sizing: border-box;
         }
 
-        /* Contenedor que imita la tarjeta de papel rugoso del centro */
         .tarjeta-artesanal {
             background-color: var(--fondo-papel);
-            /* Efecto sutil de textura tipo tela/papel */
             background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.02) 1px, transparent 0);
             background-size: 4px 4px;
             background-position: 0 0, 2px 2px;
-            
             padding: 50px 40px;
             max-width: 520px;
             width: 100%;
@@ -153,7 +149,7 @@
             60% { transform: translateY(-3px); }
         }
 
-        /* --- SECCIONES COHERENTES CON EL ESTILO --- */
+        /* --- SECCIONES --- */
         section {
             padding: 90px 20px;
             max-width: 750px;
@@ -183,7 +179,7 @@
             font-weight: 300;
         }
 
-        /* --- CONTADOR ESTILO ACUARELA --- */
+        /* --- CONTADOR --- */
         #countdown-section {
             background-color: var(--azul-acuarela);
             color: var(--blanco-fondo);
@@ -234,16 +230,23 @@
         }
 
         /* --- BOTONES --- */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
         .btn {
             background-color: transparent;
             color: var(--azul-acuarela);
-            padding: 13px 35px;
+            padding: 13px 25px;
             text-decoration: none;
             font-weight: 500;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             display: inline-block;
-            margin-top: 15px;
             border: 1px solid var(--azul-acuarela);
             transition: all 0.3s ease;
             font-size: 0.8rem;
@@ -256,7 +259,7 @@
 
         /* --- UBICACIÓN --- */
         #ubicacion {
-            background-color: rgba(214, 224, 255, 0.15); /* Fondo tenue celeste */
+            background-color: rgba(214, 224, 255, 0.15);
             max-width: 100%;
         }
         .ubicacion-contenido {
@@ -271,7 +274,6 @@
             overflow: hidden;
             margin-top: 40px;
             border: 1px solid rgba(74, 105, 153, 0.15);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.02);
         }
         .mapa-contenedor iframe {
             position: absolute;
@@ -305,12 +307,7 @@
             border: 1px solid rgba(74, 105, 153, 0.08);
             pointer-events: none;
         }
-
-        .datos-bancarios p {
-            margin: 12px 0;
-            font-size: 0.95rem;
-            color: var(--azul-oscuro);
-        }
+        .datos-bancarios p { margin: 12px 0; font-size: 0.95rem; color: var(--azul-oscuro); }
 
         /* --- CONFIRMACIÓN --- */
         #confirmacion {
@@ -321,13 +318,11 @@
             max-width: 600px;
             margin: 0 auto;
         }
-
         form {
             background: var(--blanco-fondo);
             padding: 45px;
             text-align: left;
             border: 1px solid rgba(74, 105, 153, 0.15);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
         .form-group { margin-bottom: 25px; }
         label { 
@@ -346,9 +341,7 @@
             box-sizing: border-box;
             font-family: var(--fuente-cuerpo);
             background-color: var(--blanco-fondo);
-            font-size: 0.95rem;
             color: var(--azul-oscuro);
-            transition: border-color 0.3s ease;
         }
         input:focus, select:focus, textarea:focus {
             outline: none;
@@ -377,12 +370,12 @@
             .countdown-container { gap: 15px; }
             form { padding: 30px; }
             .mapa-contenedor { padding-bottom: 65%; }
+            .btn-container { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabecera Idéntica al PDF de la imagen -->
     <header>
         <div class="tarjeta-artesanal">
             <p class="intro-boda">Después de 16 años,</p>
@@ -395,7 +388,6 @@
         <a href="#countdown-section" class="scroll-down">▽</a>
     </header>
 
-    <!-- Temporizador -->
     <section id="countdown-section">
         <h3>Cada vez falta menos</h3>
         <div class="countdown-container">
@@ -406,14 +398,13 @@
         </div>
     </section>
 
-    <!-- Ubicación -->
     <section id="ubicacion">
         <div class="ubicacion-contenido">
             <h2>¿Cuándo y Dónde?</h2>
             <span class="linea-decorativa"></span>
             <p>Te esperamos para celebrar en el</p>
             <p style="font-size: 1.2rem; color: var(--azul-oscuro);"><strong>Salón de Eventos "Casa Sur"</strong></p>
-            <p>Av. Alsina 929, Banfield, Buenos Aires, Argentina</p>
+            <p>Av. Alsina 969, Banfield, Buenos Aires, Argentina</p>
             
             <div style="margin-top: 25px; border-top: 1px solid rgba(74, 105, 153, 0.2); padding-top: 25px; display: inline-block;">
                 <p>El evento comenzará puntualmente a las</p>
@@ -421,12 +412,11 @@
             </div>
             
             <div class="mapa-contenedor">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.307534107257!2d-58.39576540445159!3d-34.74784514282226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3c52dc7db71%3A0xf83a6de37dd2be3b!2sCasa%20sur!5e0!3m2!1ses!2sar!4v1782878587659!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.307534107257!2d-58.39576540445159!3d-34.74784514282226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3c52dc7db71%3A0xf83a6de37dd2be3b!2sCasa%20sur!5e0!3m2!1ses!2sar!4v1782878587659!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Dress Code -->
     <section id="dresscode">
         <h2>Código de Vestimenta</h2>
         <span class="linea-decorativa"></span>
@@ -435,24 +425,27 @@
         <p>Listos para las fotos, pero cómodos para darlo todo en la pista de baile.</p>
     </section>
 	
-    <!-- Regalos -->
     <section id="regalos">
         <h2>Regalos & Agenda</h2>
         <span class="linea-decorativa"></span>
         <p>Tu presencia es nuestro mejor obsequio. Si de todas formas deseas hacernos un regalo,<br>puedes colaborar con nuestra luna de miel a través de la siguiente cuenta:</p>
         
         <div class="datos-bancarios">
-            <p><strong>Banco:</strong> Banco Galicia</p>
-            <p><strong>CBU:</strong> 0000003100000000000000</p>
-            <p><strong>Alias:</strong> nuestra.boda.2026</p>
-            <p><strong>Titular:</strong> Juan Pérez y María Gómez</p>
+            <p><strong>Entidad:</strong>FIWIND PAY SA</p>
+			<p><strong>CBU:</strong>00002679000000000515278</p>
+            <p><strong>Alias:</strong>bodameligus</p>
+            <p><strong>Titular:</strong>Gustavo Andres Viniesky</p>
         </div>
 
-        <p style="margin-top: 45px; font-style: italic;">¡Guarda la fecha en tu calendario para acompañarnos!</p>
-        <a id="btn-calendario" href="#" target="_blank" class="btn">📅 Agendar en Google Calendar</a>
+        <p style="margin-top: 45px; font-style: italic;">¡Guarda la fecha en tu agenda!</p>
+        
+        <!-- Contenedor con ambos botones de calendario -->
+        <div class="btn-container">
+            <a id="btn-google" href="#" target="_blank" class="btn">🤖 Google Calendar</a>
+            <a id="btn-iphone" href="#" class="btn">🍏 iPhone / Apple Calendar</a>
+        </div>
     </section>
 
-    <!-- RSVP -->
     <section id="confirmacion">
         <div class="confirmacion-contenido">
             <h2>Confirmar Asistencia</h2>
@@ -568,14 +561,41 @@
             }
         }, 1000);
 
-        // --- CALENDARIO GOOGLE ---
-        const tituloEvento = encodeURIComponent("¡Casamiento de Meli & Gus! 🎉");
-        const detallesEvento = encodeURIComponent("Los esperamos para celebrar juntos nuestro casamiento en Casa Sur. No olvides confirmar en la web.");
-        const ubicacionEvento = encodeURIComponent("Casa Sur, Av. Alsina 929, Banfield, Buenos Aires, Argentina");
-        const inicioBoda = "20260912T160000Z"; 
-        const finBoda = "20260913T010000Z";
+        // --- ENLACES DE CALENDARIO (GOOGLE & IPHONE) ---
+        const titulo = "¡Casamiento de Meli & Gus! 🎉";
+        const descripcion = "Los esperamos para celebrar juntos nuestro casamiento en Casa Sur. No olvides confirmar en la web.";
+        const ubicacion = "Casa Sur, Av. Alsina 969, Banfield, Buenos Aires, Argentina";
+        
+        // Fechas en formato UTC (13:00 hs de Arg GTM-3 es 16:00 UTC)
+        const startUTC = "20260912T160000Z";
+        const endUTC = "20260913T010000Z";
 
-        document.getElementById("btn-calendario").href = `https://www.google.com/calendar/render?action=TEMPLATE&text=${tituloEvento}&dates=${inicioBoda}/${finBoda}&details=${detallesEvento}&location=${ubicacionEvento}&sf=true&output=xml`;
+        // 1. Configurar botón de Google
+        document.getElementById("btn-google").href = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(titulo)}&dates=${startUTC}/${endUTC}&details=${encodeURIComponent(descripcion)}&location=${encodeURIComponent(ubicacion)}&sf=true&output=xml`;
+
+        // 2. Generar archivo .ICS dinámico para iPhone / Apple Calendar
+        const icsStructure = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//Nuestra Boda//Meli y Gus//ES",
+            "BEGIN:VEVENT",
+            `UID:${new Date().getTime()}@nuestraboda.com`,
+            `DTSTAMP:${startUTC}`,
+            `DTSTART:${startUTC}`,
+            `DTEND:${endUTC}`,
+            `SUMMARY:${titulo}`,
+            `DESCRIPTION:${descripcion}`,
+            `LOCATION:${ubicacion}`,
+            "END:VEVENT",
+            "END:VCALENDAR"
+            ].join("\r\n");
+
+        const blob = new Blob([icsStructure], { type: "text/calendar;charset=utf-8" });
+        const urlIcs = URL.createObjectURL(blob);
+        
+        const btnIphone = document.getElementById("btn-iphone");
+        btnIphone.href = urlIcs;
+        btnIphone.download = "casamiento-meli-y-gus.ics";
     </script>
 </body>
 </html>
