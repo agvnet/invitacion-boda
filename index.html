@@ -8,16 +8,18 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --dorado: #c5a059;
-            --dorado-oscuro: #96743d;
-            --oscuro: #1a252f;
-            --texto-suave: #5a626a;
-            --blanco-roto: #fdfdfa;
-            --crema-claro: #f8f4eb;
+            --azul-acuarela: #4a6999;
+            --azul-oscuro: #2c3e50;
+            --texto-suave: #5a6b7c;
+            --blanco-fondo: #ffffff;
+            --fondo-papel: #f5f2e9; /* El color crema del papel artesanal */
+            --rayas-celeste: rgba(214, 224, 255, 0.5); /* Celeste periwinkle de la tarjeta */
+            
+            --fuente-script: 'Dancing Script', cursive;
             --fuente-elegante: 'Playfair Display', serif;
             --fuente-cuerpo: 'Poppins', sans-serif;
         }
@@ -31,8 +33,8 @@
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: var(--blanco-roto);
-            color: var(--oscuro);
+            background-color: var(--blanco-fondo);
+            color: var(--azul-oscuro);
             text-align: center;
             -webkit-font-smoothing: antialiased;
         }
@@ -41,48 +43,67 @@
             font-family: var(--fuente-elegante);
             font-weight: 400;
             margin-bottom: 10px;
-            letter-spacing: 0.5px;
         }
 
-        /* --- PORTADA ADAPTADA AL ESTILO DEL PDF --- */
+        /* --- PORTADA CON LAS RAYAS Y EL PAPEL ARTESANAL --- */
         header {
-            background: linear-gradient(180deg, #fbf9f4 0%, #f4eee1 100%);
-            color: var(--oscuro);
+            /* Patrón de rayas verticales celestes acuarela */
+            background: repeating-linear-gradient(
+                90deg,
+                var(--blanco-fondo),
+                var(--blanco-fondo) 28px,
+                var(--rayas-celeste) 28px,
+                var(--rayas-celeste) 56px
+            );
             height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 0 20px;
+            padding: 20px;
             position: relative;
             box-sizing: border-box;
         }
 
+        /* Contenedor que imita la tarjeta de papel rugoso del centro */
+        .tarjeta-artesanal {
+            background-color: var(--fondo-papel);
+            /* Efecto sutil de textura tipo tela/papel */
+            background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.02) 1px, transparent 0);
+            background-size: 4px 4px;
+            background-position: 0 0, 2px 2px;
+            
+            padding: 50px 40px;
+            max-width: 520px;
+            width: 100%;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            border-radius: 2px;
+            border: 1px solid rgba(0,0,0,0.04);
+            box-sizing: border-box;
+        }
+
         .intro-boda {
-            font-family: var(--fuente-cuerpo);
-            font-size: 1.1rem;
-            font-weight: 400;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--texto-suave);
-            margin: 0 0 5px 0;
+            font-family: var(--fuente-script);
+            font-size: 3.2rem;
+            color: var(--azul-acuarela);
+            margin: 0;
+            line-height: 1.1;
         }
 
         .cosa-seria {
-            font-family: var(--fuente-elegante);
-            font-size: 1.6rem;
-            font-style: italic;
-            color: var(--dorado-oscuro);
-            margin: 0 0 25px 0;
+            font-family: var(--fuente-script);
+            font-size: 2.2rem;
+            color: var(--azul-acuarela);
+            margin: 10px 0 25px 0;
+            opacity: 0.9;
         }
 
         header h1 {
             font-family: var(--fuente-elegante);
-            font-size: 4.8rem;
+            font-size: 4.2rem;
             font-style: italic;
             font-weight: 400;
             margin: 0;
-            color: var(--oscuro);
+            color: var(--azul-oscuro);
             line-height: 1.1;
         }
 
@@ -90,11 +111,11 @@
             font-family: var(--fuente-elegante);
             font-size: 2.5rem;
             font-weight: 400;
-            margin: 30px 0;
-            border-top: 1px solid rgba(197, 160, 89, 0.4);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.4);
-            padding: 15px 60px;
-            color: var(--oscuro);
+            margin: 25px 0;
+            border-top: 1px solid rgba(74, 105, 153, 0.3);
+            border-bottom: 1px solid rgba(74, 105, 153, 0.3);
+            padding: 10px 20px;
+            color: var(--azul-acuarela);
             letter-spacing: 1px;
         }
 
@@ -103,57 +124,56 @@
             font-weight: 400;
             letter-spacing: 5px;
             text-transform: uppercase;
-            color: var(--oscuro);
-            margin-top: 10px;
+            color: var(--azul-oscuro);
+            margin: 10px 0 0 0;
         }
 
         header p.bajada-pdf {
             font-size: 0.95rem;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             color: var(--texto-suave);
-            margin-top: 25px;
+            margin-top: 30px;
             font-weight: 400;
+            line-height: 1.5;
         }
 
         .scroll-down {
             position: absolute;
-            bottom: 30px;
+            bottom: 25px;
             font-size: 1.5rem;
             animation: bounce 2s infinite;
-            color: var(--dorado);
+            color: var(--azul-acuarela);
             text-decoration: none;
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-8px); }
-            60% { transform: translateY(-4px); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
         }
 
-        /* --- SECCIONES --- */
+        /* --- SECCIONES COHERENTES CON EL ESTILO --- */
         section {
-            padding: 100px 20px;
-            max-width: 800px;
+            padding: 90px 20px;
+            max-width: 750px;
             margin: 0 auto;
             box-sizing: border-box;
         }
 
         section h2 {
-            font-size: 2.4rem;
-            color: var(--oscuro);
-            position: relative;
-            display: inline-block;
-            margin-bottom: 40px;
+            font-size: 2.3rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 5px;
         }
 
-        section h2::after {
-            content: '';
+        .linea-decorativa {
             display: block;
             width: 50px;
             height: 1px;
-            background-color: var(--dorado);
-            margin: 15px auto 0 auto;
+            background-color: var(--azul-acuarela);
+            margin: 15px auto 35px auto;
+            opacity: 0.5;
         }
 
         p {
@@ -163,52 +183,45 @@
             font-weight: 300;
         }
 
-        .icon-decor {
-            font-size: 1.8rem;
-            color: var(--dorado);
-            margin-bottom: 15px;
-            display: block;
-            opacity: 0.9;
-        }
-
-        /* --- CUENTA REGRESIVA --- */
+        /* --- CONTADOR ESTILO ACUARELA --- */
         #countdown-section {
-            background-color: var(--oscuro);
-            color: white;
-            padding: 70px 20px;
+            background-color: var(--azul-acuarela);
+            color: var(--blanco-fondo);
+            padding: 65px 20px;
         }
 
         #countdown-section h3 {
             font-family: var(--fuente-cuerpo);
             margin-top: 0;
-            letter-spacing: 4px;
-            color: var(--dorado);
-            font-weight: 400;
-            font-size: 0.85rem;
+            letter-spacing: 3px;
+            color: var(--blanco-fondo);
+            font-weight: 300;
+            font-size: 0.9rem;
             text-transform: uppercase;
+            opacity: 0.9;
         }
 
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             flex-wrap: wrap;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .countdown-item {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.08);
             padding: 20px;
             min-width: 90px;
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .time-num {
             font-family: var(--fuente-elegante);
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-style: italic;
             display: block;
-            color: white;
+            color: var(--blanco-fondo);
             line-height: 1;
             margin-bottom: 5px;
         }
@@ -217,13 +230,13 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #a4b0be;
+            color: rgba(255,255,255,0.7);
         }
 
         /* --- BOTONES --- */
         .btn {
             background-color: transparent;
-            color: var(--dorado-oscuro);
+            color: var(--azul-acuarela);
             padding: 13px 35px;
             text-decoration: none;
             font-weight: 500;
@@ -231,30 +244,34 @@
             text-transform: uppercase;
             display: inline-block;
             margin-top: 15px;
-            border: 1px solid var(--dorado);
-            transition: all 0.4s ease;
+            border: 1px solid var(--azul-acuarela);
+            transition: all 0.3s ease;
             font-size: 0.8rem;
         }
 
         .btn:hover {
-            background-color: var(--dorado-oscuro);
-            color: white;
-            border-color: var(--dorado-oscuro);
+            background-color: var(--azul-acuarela);
+            color: var(--blanco-fondo);
         }
 
         /* --- UBICACIÓN --- */
         #ubicacion {
-            background-color: var(--crema-claro);
+            background-color: rgba(214, 224, 255, 0.15); /* Fondo tenue celeste */
+            max-width: 100%;
+        }
+        .ubicacion-contenido {
+            max-width: 750px;
+            margin: 0 auto;
         }
         
         .mapa-contenedor {
             position: relative;
-            padding-bottom: 50%;
+            padding-bottom: 45%;
             height: 0;
             overflow: hidden;
             margin-top: 40px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(74, 105, 153, 0.15);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.02);
         }
         .mapa-contenedor iframe {
             position: absolute;
@@ -265,55 +282,59 @@
         /* --- DRESS CODE --- */
         #dresscode p strong {
             font-family: var(--fuente-elegante);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-style: italic;
             font-weight: 400;
-            color: var(--oscuro);
+            color: var(--azul-oscuro);
         }
 
         /* --- REGALOS --- */
         .datos-bancarios {
-            background: white;
-            padding: 40px;
-            border: 1px solid #e8e8e1;
-            max-width: 400px;
+            background: var(--blanco-fondo);
+            padding: 35px;
+            border: 1px solid rgba(74, 105, 153, 0.2);
+            max-width: 420px;
             margin: 35px auto;
             text-align: left;
             position: relative;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
         }
-        
         .datos-bancarios::before {
             content: '';
             position: absolute;
-            top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border: 1px solid rgba(197, 160, 89, 0.25);
+            top: 6px; left: 6px; right: 6px; bottom: 6px;
+            border: 1px solid rgba(74, 105, 153, 0.08);
             pointer-events: none;
         }
 
         .datos-bancarios p {
-            margin: 10px 0;
+            margin: 12px 0;
             font-size: 0.95rem;
+            color: var(--azul-oscuro);
         }
 
         /* --- CONFIRMACIÓN --- */
         #confirmacion {
-            background-color: var(--crema-claro);
+            background-color: rgba(214, 224, 255, 0.15);
+            max-width: 100%;
+        }
+        .confirmacion-contenido {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         form {
-            background: white;
-            padding: 50px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.02);
+            background: var(--blanco-fondo);
+            padding: 45px;
             text-align: left;
-            border: 1px solid #e8e8e1;
+            border: 1px solid rgba(74, 105, 153, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
         .form-group { margin-bottom: 25px; }
         label { 
             display: block; 
             font-weight: 500; 
             margin-bottom: 10px; 
-            color: var(--oscuro);
+            color: var(--azul-oscuro);
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -321,50 +342,56 @@
         input, select, textarea {
             width: 100%;
             padding: 14px;
-            border: 1px solid #e2e2e2;
+            border: 1px solid #d9e1ec;
             box-sizing: border-box;
             font-family: var(--fuente-cuerpo);
-            background-color: #fff;
+            background-color: var(--blanco-fondo);
             font-size: 0.95rem;
+            color: var(--azul-oscuro);
             transition: border-color 0.3s ease;
         }
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--dorado);
+            border-color: var(--azul-acuarela);
         }
 
         /* --- FOOTER --- */
         footer {
-            padding: 50px 20px;
-            background-color: var(--oscuro);
-            color: rgba(255,255,255,0.4);
+            padding: 45px 20px;
+            background-color: var(--azul-oscuro);
+            color: rgba(255,255,255,0.6);
             font-size: 0.8rem;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 3.4rem; }
-            .nombres-portada { font-size: 1.8rem; padding: 12px 30px; margin: 20px 0; }
+            header h1 { font-size: 3.2rem; }
+            .tarjeta-artesanal { padding: 35px 25px; }
+            .intro-boda { font-size: 2.5rem; }
+            .cosa-seria { font-size: 1.8rem; }
+            .nombres-portada { font-size: 1.8rem; }
             section { padding: 70px 20px; }
             section h2 { font-size: 1.9rem; }
-            .time-num { font-size: 2.3rem; }
+            .time-num { font-size: 2.5rem; }
             .countdown-container { gap: 15px; }
-            .countdown-item { padding: 15px; min-width: 75px; }
             form { padding: 30px; }
-            .mapa-contenedor { padding-bottom: 70%; }
+            .mapa-contenedor { padding-bottom: 65%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabecera Estilo Invitación PDF -->
+    <!-- Cabecera Idéntica al PDF de la imagen -->
     <header>
-        <p class="intro-boda">Después de 16 años,</p>
-        <p class="cosa-seria">La cosa se puso seria...</p>
-        <h1>¡Nos casamos!</h1>
-        <div class="nombres-portada">Meli & Gus</div>
-        <p class="fecha-top">12 . 09 . 2026</p>
-        <p class="bajada-pdf">¿Cuándo? ¿Dónde?<br>Deslizá hacia abajo para enterarte de todo.</p>
+        <div class="tarjeta-artesanal">
+            <p class="intro-boda">Después de 16 años,</p>
+            <p class="cosa-seria">La cosa se puso seria...</p>
+            <h1>¡Nos casamos!</h1>
+            <div class="nombres-portada">Meli & Gus</div>
+            <p class="fecha-top">12 . 09 . 2026</p>
+            <p class="bajada-pdf">¿Cuándo? ¿Dónde?<br>Deslizá hacia abajo para ver toda la información.</p>
+        </div>
         <a href="#countdown-section" class="scroll-down">▽</a>
     </header>
 
@@ -381,26 +408,28 @@
 
     <!-- Ubicación -->
     <section id="ubicacion">
-        <span class="icon-decor">✨</span>
-        <h2>¿Cuándo y Dónde?</h2>
-        <p>Te esperamos para celebrar en el</p>
-        <p><strong>Salón de Eventos "Casa Sur"</strong></p>
-        <p style="font-style: italic; color: var(--dorado-oscuro);">Av. Alsina 929, Banfield, Buenos Aires, Argentina</p>
-        
-        <div style="margin-top: 25px; border-top: 1px solid #e5dfd3; padding-top: 25px; display: inline-block;">
-            <p>El evento comenzará puntualmente a las</p>
-            <p style="font-family: var(--fuente-elegante); font-size: 1.8rem; font-style: italic; color: var(--oscuro); margin: 0;">13:00 hs.</p>
-        </div>
-        
-        <div class="mapa-contenedor">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.307534107257!2d-58.39576540445159!3d-34.74784514282226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3c52dc7db71%3A0xf83a6de37dd2be3b!2sCasa%20sur!5e0!3m2!1ses!2sar!4v1782878587659!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div class="ubicacion-contenido">
+            <h2>¿Cuándo y Dónde?</h2>
+            <span class="linea-decorativa"></span>
+            <p>Te esperamos para celebrar en el</p>
+            <p style="font-size: 1.2rem; color: var(--azul-oscuro);"><strong>Salón de Eventos "Casa Sur"</strong></p>
+            <p>Av. Alsina 929, Banfield, Buenos Aires, Argentina</p>
+            
+            <div style="margin-top: 25px; border-top: 1px solid rgba(74, 105, 153, 0.2); padding-top: 25px; display: inline-block;">
+                <p>El evento comenzará puntualmente a las</p>
+                <p style="font-family: var(--fuente-elegante); font-size: 2rem; color: var(--azul-acuarela); margin: 0;">13:00 hs.</p>
+            </div>
+            
+            <div class="mapa-contenedor">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.307534107257!2d-58.39576540445159!3d-34.74784514282226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3c52dc7db71%3A0xf83a6de37dd2be3b!2sCasa%20sur!5e0!3m2!1ses!2sar!4v1782878587659!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
         </div>
     </section>
 
     <!-- Dress Code -->
     <section id="dresscode">
-        <span class="icon-decor">👔</span>
         <h2>Código de Vestimenta</h2>
+        <span class="linea-decorativa"></span>
         <p>Queremos que disfrutes al máximo, por eso la etiqueta propuesta es:</p>
         <p><strong>Elegante Sport</strong></p>
         <p>Listos para las fotos, pero cómodos para darlo todo en la pista de baile.</p>
@@ -408,8 +437,8 @@
 	
     <!-- Regalos -->
     <section id="regalos">
-        <span class="icon-decor">🎁</span>
         <h2>Regalos & Agenda</h2>
+        <span class="linea-decorativa"></span>
         <p>Tu presencia es nuestro mejor obsequio. Si de todas formas deseas hacernos un regalo,<br>puedes colaborar con nuestra luna de miel a través de la siguiente cuenta:</p>
         
         <div class="datos-bancarios">
@@ -425,48 +454,50 @@
 
     <!-- RSVP -->
     <section id="confirmacion">
-        <span class="icon-decor">💌</span>
-        <h2>Confirmar Asistencia</h2>
-        <p>Agradecemos que nos indiques tu presencia completando el siguiente formulario<br>antes del <strong>1 de Septiembre</strong>.</p>
-        
-        <form id="rsvpForm">
-            <div class="form-group">
-                <label for="nombre">Nombre Completo</label>
-                <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
-            </div>
+        <div class="confirmacion-contenido">
+            <h2>Confirmar Asistencia</h2>
+            <span class="linea-decorativa"></span>
+            <p>Agradecemos que nos indiques tu presencia completando el siguiente formulario<br>antes del <strong>1 de Septiembre</strong>.</p>
+            
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+                </div>
 
-            <div class="form-group">
-                <label for="asistencia">¿Asistirás?</label>
-                <select id="asistencia" required>
-                    <option value="" disabled selected>Selecciona una opción</option>
-                    <option value="Si">Sí, ¡allí estaré!</option>
-                    <option value="No">No podré asistir</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="asistencia">¿Asistirás?</label>
+                    <select id="asistencia" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="Si">Sí, ¡allí estaré!</option>
+                        <option value="No">No podré asistir</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="comida">Requisito Alimentario Especial</label>
-                <select id="comida">
-                    <option value="Ninguno">Ninguno (Menú estándar)</option>
-                    <option value="Vegetariano">Vegetariano</option>
-                    <option value="Vegano">Vegano</option>
-                    <option value="Celíaco">Celíaco (Sin TACC)</option>
-                    <option value="Otro">Otro (Especificar abajo)</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="comida">Requisito Alimentario Especial</label>
+                    <select id="comida">
+                        <option value="Ninguno">Ninguno (Menú estándar)</option>
+                        <option value="Vegetariano">Vegetariano</option>
+                        <option value="Vegano">Vegano</option>
+                        <option value="Celíaco">Celíaco (Sin TACC)</option>
+                        <option value="Otro">Otro (Especificar abajo)</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="detallesComida">Detalles de comida (opcional)</label>
-                <textarea id="detallesComida" rows="2" placeholder="Alergias o especificaciones..."></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="detallesComida">Detalles de comida (opcional)</label>
+                    <textarea id="detallesComida" rows="2" placeholder="Alergias o especificaciones..."></textarea>
+                </div>
 
-            <div class="form-group">
-                <label for="musica">¿Qué canción sugerís para el DJ?</label>
-                <input type="text" id="musica" placeholder="Ej: La Macarena">
-            </div>
+                <div class="form-group">
+                    <label for="musica">¿Qué canción sugerís para el DJ?</label>
+                    <input type="text" id="musica" placeholder="Ej: La Macarena">
+                </div>
 
-            <button type="submit" class="btn" style="width: 100%; background-color: var(--oscuro); color: white; border: none; cursor: pointer; padding: 16px; font-weight: 600;">Enviar Confirmación</button>
-        </form>
+                <button type="submit" class="btn" style="width: 100%; background-color: var(--azul-acuarela); color: white; border: none; cursor: pointer; padding: 16px; font-weight: 600;">Enviar Confirmación</button>
+            </form>
+        </div>
     </section>
 
     <footer>
@@ -533,7 +564,7 @@
 
             if (distancia < 0) {
                 clearInterval(contador);
-                document.getElementById("countdown-section").innerHTML = "<h2 style='color: var(--dorado); margin: 0; font-style: italic;'>¡Llegó el gran día! 🍾🎉</h2>";
+                document.getElementById("countdown-section").innerHTML = "<h2 style='color: var(--blanco-fondo); margin: 0; font-style: italic;'>¡Llegó el gran día! 🍾🎉</h2>";
             }
         }, 1000);
 
@@ -541,7 +572,7 @@
         const tituloEvento = encodeURIComponent("¡Casamiento de Meli & Gus! 🎉");
         const detallesEvento = encodeURIComponent("Los esperamos para celebrar juntos nuestro casamiento en Casa Sur. No olvides confirmar en la web.");
         const ubicacionEvento = encodeURIComponent("Casa Sur, Av. Alsina 929, Banfield, Buenos Aires, Argentina");
-        const inicioBoda = "20260912T160000Z"; // Ajustado a UTC (13:00 AR es 16:00 UTC)
+        const inicioBoda = "20260912T160000Z"; 
         const finBoda = "20260913T010000Z";
 
         document.getElementById("btn-calendario").href = `https://www.google.com/calendar/render?action=TEMPLATE&text=${tituloEvento}&dates=${inicioBoda}/${finBoda}&details=${detallesEvento}&location=${ubicacionEvento}&sf=true&output=xml`;
