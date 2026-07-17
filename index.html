@@ -116,12 +116,88 @@
         }
 
         header p.fecha-top {
-            font-size: 1.1rem;
+            font-size: 1.6rem;
             font-weight: 400;
             letter-spacing: 5px;
             text-transform: uppercase;
             color: var(--azul-oscuro);
             margin: 10px 0 0 0;
+        }
+		
+        /* --- EL TRUCO DEFINITIVO PARA LA FECHA --- */
+        .contenedor-fecha-boda {
+            margin: 35px auto 20px auto;
+            max-width: 450px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .fecha-mes-ano {
+            font-size: 0.85rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--texto-suave);
+            margin: 0 0 1px 0;
+            font-weight: 500;
+        }
+
+        /* Creamos 3 columnas perfectas */
+        .fecha-grid-bloque {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center; /* Centra las cajas de los costados */
+            width: 100%;
+        }
+
+        /* Columna Izquierda: Línea + VIERNES */
+        .columna-izquierda {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        /* Columna Derecha: 2025 + Línea */
+        .columna-derecha {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .fecha-linea {
+            flex: 1;
+            height: 1px;
+            background-color: var(--azul-oscuro);
+            opacity: 0.3;
+            max-width: 60px; /* Controla el largo de las alitas de la línea */
+        }
+
+        .fecha-dia-semana {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--azul-oscuro);
+            font-weight: 500;
+            padding: 0 20px;
+            white-space: nowrap;
+        }
+
+        /* El centro: El número libre de empujes de los costados */
+        .columna-centro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fecha-numero-destacado {
+            font-family: var(--fuente-elegante);
+            font-size: 4rem;
+            color: var(--azul-oscuro);
+            font-weight: 800;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            /* El truco mágico: si sigue un pelín abajo, este número negativo lo sube a la fuerza */
+            transform: translateY(-8px); 
         }
 
         header p.bajada-pdf {
@@ -378,12 +454,29 @@
 
     <header>
         <div class="tarjeta-artesanal">
-            <p class="intro-boda">Después de 16 años,</p>
-            <p class="cosa-seria">La cosa se puso seria...</p>
-            <h1>¡Nos casamos!</h1>
+            <h1>Nuestra Boda</h1>
             <div class="nombres-portada">Meli & Gus</div>
-            <p class="fecha-top">12 . 09 . 2026</p>
-            <p class="bajada-pdf">¿Cuándo? ¿Dónde?<br>Deslizá hacia abajo para ver toda la información.</p>
+            <!-- Estructura en 3 columnas independientes -->
+            <div class="contenedor-fecha-boda">
+                <p class="fecha-mes-ano">Septiembre</p>
+                <div class="fecha-grid-bloque">  
+                    <div class="columna-izquierda">
+                        <div class="fecha-linea"></div>
+                        <span class="fecha-dia-semana">Sábado</span>
+                    </div>
+                    
+                    <div class="columna-centro">
+                        <span class="fecha-numero-destacado">12</span>
+                    </div>
+                    
+                    <div class="columna-derecha">
+                        <span class="fecha-dia-semana">2026</span>
+                        <div class="fecha-linea"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            <p class="bajada-pdf"><br>Deslizá hacia abajo para ver toda la información.</p>
         </div>
         <a href="#countdown-section" class="scroll-down">▽</a>
     </header>
@@ -407,7 +500,7 @@
             <p>Av. Alsina 969, Banfield, Buenos Aires, Argentina</p>
             
             <div style="margin-top: 25px; border-top: 1px solid rgba(74, 105, 153, 0.2); padding-top: 25px; display: inline-block;">
-                <p>El evento comenzará puntualmente a las</p>
+                <p>El evento comenzará con la ceremonia puntualmente a las</p>
                 <p style="font-family: var(--fuente-elegante); font-size: 2rem; color: var(--azul-acuarela); margin: 0;">13:00 hs.</p>
             </div>
             
@@ -428,7 +521,7 @@
     <section id="regalos">
         <h2>Regalos & Agenda</h2>
         <span class="linea-decorativa"></span>
-        <p>Tu presencia es nuestro mejor obsequio. Si de todas formas deseas hacernos un regalo,<br>puedes colaborar con nuestra luna de miel a través de la siguiente cuenta:</p>
+        <p>Tu presencia es nuestro mejor regalo.<br>Si de todas formas deseas hacernos un presente,<br>podés colaborar con nuestra luna de miel a través de la siguiente cuenta:</p>
         
         <div class="datos-bancarios">
             <p><strong>Entidad:</strong> FIWIND PAY SA</p>
@@ -450,20 +543,20 @@
         <div class="confirmacion-contenido">
             <h2>Confirmar Asistencia</h2>
             <span class="linea-decorativa"></span>
-            <p>Agradecemos que nos indiques tu presencia completando el siguiente formulario<br>antes del <strong>1 de Septiembre</strong>.</p>
+            <p>Agradecemos que nos confirmes tu presencia completando<br>el siguiente formulario antes del <strong>28 de Agosto</strong>.</p>
             
             <form id="rsvpForm">
                 <div class="form-group">
                     <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+                    <input type="text" id="nombre" required placeholder="Ej: Lautaro Martinez">
                 </div>
 
                 <div class="form-group">
                     <label for="asistencia">¿Asistirás?</label>
                     <select id="asistencia" required>
                         <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="Si">Sí, ¡allí estaré!</option>
-                        <option value="No">No podré asistir</option>
+                        <option value="Si">Sí, ¡No me la pierdo ni a palos!</option>
+                        <option value="No">No voy a poder ir ¡Buhhhh!</option>
                     </select>
                 </div>
 
@@ -485,7 +578,7 @@
 
                 <div class="form-group">
                     <label for="musica">¿Qué canción sugerís para el DJ?</label>
-                    <input type="text" id="musica" placeholder="Ej: La Macarena">
+                    <input type="text" id="musica" placeholder="Ej: Ese toro enamorado de la luna">
                 </div>
 
                 <button type="submit" class="btn" style="width: 100%; background-color: var(--azul-acuarela); color: white; border: none; cursor: pointer; padding: 16px; font-weight: 600;">Enviar Confirmación</button>
